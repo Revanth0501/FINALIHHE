@@ -1,0 +1,109 @@
+/* Center the title and style it */
+h2.form-title {
+    text-align: center;
+    color: #134f98;
+    font-size: 36px;
+    font-weight: 650;
+    padding-bottom: 20px;
+}
+
+/* Style the form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+/* Style the form itself */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #134f98;
+    box-shadow: 0 4px 10px rgba(19, 79, 152, 0.6);
+    padding: 20px;
+    gap: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Style the labels */
+label {
+    font-size: 16px;
+    color: #134f98;
+    margin-bottom: 5px;
+}
+
+/* Style input and select elements */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Add hover effect for inputs and selects */
+input:hover,
+select:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add focus styles for inputs and selects */
+input:focus,
+select:focus {
+    outline: none;
+    border: 1px solid #134f98;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #134f98;
+    color: white;
+    height: 55px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: center;
+    text-align: center;
+}
+
+/* Change button style on hover */
+button[type="submit"]:hover {
+    background-color: white;
+    color: #134f98;
+    border: 2px solid #134f98;
+}
+
+/* Disable the button for invalid forms */
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Prevent outline on button focus */
+button[type="submit"]:focus {
+    outline: none;
+}
+
+/* Add margin-top to spacing around form elements */
+.form-container > form {
+    margin-top: 20px;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    font-size: 14px;
+}

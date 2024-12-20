@@ -1,0 +1,37 @@
+<div class="contact_us_6" style="background-color: #e2e8f0;">
+    <div class="responsive-container-block container">
+      <form class="form-box" [formGroup]='Contactform' (ngSubmit)="onSubmit()">
+        <div class="container-block form-wrapper">
+          <div class="mob-text">
+            <h4 class="text-blk contactus-head">
+              Raise a Ticket
+            </h4>
+          </div>
+  
+          <div>
+            <label for="Issue" style="font-weight: 500; color:#343a40"></label>
+            <textarea id="Issue" formControlName="Issue" placeholder="Enter Your Issue" rows="9" cols="50"></textarea>
+            <small class="error" *ngIf="Contactform.get('Issue')?.touched && Contactform.get('Issue')?.invalid">
+              Response is required.
+            </small>
+          </div>
+  
+          <button class="submit-btn" type="submit">
+            Generate Ticket
+          </button>
+        </div>
+      </form>
+  
+      <div class="form-right">
+        <p class="text-blk map-contactus-head" style="color:#03a9f4">Reach us at</p>
+        <p class="text-blk map-contactus-subhead">You can refer to the below location for contacting us.</p>
+  
+        <div class="map-box">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.7831234634905!2d77.67723877353514!3d9.57471048021129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06dbc06968e9eb%3A0x6cfd8f94e42f98c4!2sKalasalingam%20Academy%20of%20Research%20and%20Education!5e1!3m2!1sen!2sin!4v1734086495755!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>

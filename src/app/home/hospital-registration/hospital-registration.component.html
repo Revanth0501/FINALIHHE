@@ -1,0 +1,160 @@
+<body>
+  <div class="container">
+
+    <div class="title text-center "> Hospital Registration</div>
+    <div class="content">
+
+      <form [formGroup]="hospital_Registration" (ngSubmit)="on_Submit()">
+        <div class="user-details">
+
+          <div class="input-box">
+            <label class="details" for="Hospital_Name" style="font-weight:600;">Hospital Name</label>
+            <input type="text" id="Hospital_Name" name="Hospital_Name" formControlName="Hospital_Name"
+              placeholder="Enter your name">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Name')?.touched && hospital_Registration.get('Hospital_Name')?.invalid">
+              *Hospital name is required.
+            </small>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="Hospital_User_Name" style="font-weight:600;">Founder Name</label>
+            <input type="text" id="Hospital_User_Name" name="Hospital_User_Name" formControlName="Hospital_User_Name"
+              placeholder="Enter your username">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_User_Name')?.touched && hospital_Registration.get('Hospital_User_Name')?.invalid">
+              *Hospital user name is required.
+            </small>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="Hospital_Email" style="font-weight:600;">Email</label>
+            <input type="text" id="Hospital_Email" name="Hospital_Email" formControlName="Hospital_Email"
+              placeholder="Enter your email">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Email')?.touched && hospital_Registration.get('Hospital_Email')?.invalid">
+              *Hospital email is required and make sure that it should not register previous.
+            </small>
+          </div>
+
+          <!-- <div class="input-box">
+            <label class="details" for="Hospital_Code" style="font-weight:600;">Hospital Code</label>
+            <input type="text" id="Hospital_Code" name="Hospital_Code" formControlName="Hospital_Code"
+              placeholder="Enter your Hospital Address">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Code')?.touched && hospital_Registration.get('Hospital_Code')?.invalid">
+              *Hospital code is required.
+            </small>
+          </div> -->
+
+
+          <div class="input-box">
+            <label class="details" for="Hospital_Phone_number" style="font-weight:600;">Phone Number</label>
+            <input type="text" id="Hospital_Phone_number" name="Hospital_Phone_number"
+              formControlName="Hospital_Phone_number" placeholder="Enter your number">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Phone_number')?.touched && hospital_Registration.get('Hospital_Phone_number')?.invalid">
+              *Hospital number is required.
+            </small>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="Hospital_Avilable_Facilities" style="font-weight:600;">Available
+              Facilities</label>
+            <input type="text" id="Hospital_Avilable_Facilities" name="Hospital_Avilable_Facilities"
+              formControlName="Hospital_Avilable_Facilities" placeholder="Enter your Available Facilities">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Avilable_Facilities')?.touched && hospital_Registration.get('Hospital_Avilable_Facilities')?.invalid">
+              *Hospital Facilities is required.
+            </small>
+          </div>
+          <div class="input-box">
+            <label class="details" for="Hospital_Type" style="font-weight:600;border-color: #9b59b6;">Hospital
+              Type</label>
+
+            <select type="text" id="Hospital_Type" style="border-color: #9b59b6;" name="Hospital_Type"
+              formControlName="Hospital_Type" class="form-control" palceholder="Choose Hospital Type "
+              asp-for="Hospital_Type">
+              <option [disabled]="true"><span>Select hospital type</span></option>
+              <option><span>General</span></option>
+              <option><span>Specialty</span></option>
+              <option><span>Multi-specialty</span> </option>
+
+            </select>
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Type')?.touched && hospital_Registration.get('Hospital_Type')?.invalid">
+              *Hospital type is required.
+            </small>
+          </div>
+          <div class="input-box">
+            <label class="details" for="Hospital_Address" style="font-weight:600;">Address</label>
+            <input type="text" id="Hospital_Address" name="Hospital_Address" formControlName="Hospital_Address"
+              placeholder="Confirm your Address">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Address')?.touched && hospital_Registration.get('Hospital_Address')?.invalid">
+              *Address is required.
+            </small>
+          </div>
+          <div class="input-box">
+            <label class="details" for="Hospital_Region" style="font-weight:600;">Region</label>
+            <input type="text" id="Hospital_Region" name="Hospital_Region" formControlName="Hospital_Region"
+              placeholder="Confirm your region">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Region')?.touched && hospital_Registration.get('Hospital_Region')?.invalid">
+              *Region is required.
+            </small>
+          </div>
+
+
+          <div class="input-box">
+            <label class="details" for="Hospital_Established_Date" style="font-weight:600;">Established Date</label>
+            <input type="date" id="Hospital_Established_Date" name="Hospital_Established_Date"
+              formControlName="Hospital_Established_Date" placeholder="Confirm your established date">
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Established_Date')?.touched && hospital_Registration.get('Hospital_Established_Date')?.invalid">
+              *Hospital established date is required.
+            </small>
+          </div>
+          <!-- <div class="input-box">
+                        <label class="details" for="Hospital_Logo" style="font-weight:600;">Hospital Logo</label>
+                        <input id="Hospital_Logo" name="Hospital_Logo" type="file" formControlName="Hospital_Logo" placeholder="Enter Your Name" />
+                        <small class="error" max=1 *ngIf="hospital_Registration.get('Hospital_Logo')?.touched && hospital_Registration.get('Hospital_Logo')?.invalid">
+                          *Logo is required. 
+                        </small>
+                      </div> -->
+          <div class="input-box">
+            <label class="details" for="Hospital_Ownership_Type" style="font-weight:600;">Hospital Owner ship
+              type</label>
+            <input id="Hospital_Ownership_Type" name="Hospital_Ownership_Type" type="text"
+              formControlName="Hospital_Ownership_Type" placeholder="Enter Your Name : Trust (or) Specialty" />
+            <small class="error"
+              *ngIf="hospital_Registration.get('Hospital_Ownership_Type')?.touched && hospital_Registration.get('Hospital_Ownership_Type')?.invalid">
+              *Hospital type is required.
+            </small>
+          </div>
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="row">
+          <div class="text-center">
+
+            <button class="submit-btn" type="submit" [disabled]="hospital_Registration.invalid" style="width:120px;">
+              Register
+            </button>
+
+          </div>
+        </div>
+
+
+
+      </form>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,69 @@
+<div class="form-container">
+    <h2 class="form-title">Update Profile</h2>
+    <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+      
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter Your Name" />
+        <small class="error" *ngIf="doctorForm.get('name')?.touched && doctorForm.get('name')?.invalid">
+          Name is required.
+        </small>
+      </div>
+  
+  
+      
+      <div>
+        <label for="fieldOfStudy">Field Of Study:</label>
+        <input id="fieldOfStudy" type="text" formControlName="fieldOfStudy" placeholder="Field of study" />
+        <small class="error"
+          *ngIf="doctorForm.get('fieldOfStudy')?.touched && doctorForm.get('fieldOfStudy')?.invalid">
+          Filed of study is required.
+        </small>
+      </div>
+      <div>
+       
+        <div>
+          <label for="associatedHospital">Hospital:</label>
+          <select id="associatedHospital" formControlName="associatedHospital"
+            placeholder="Enter Your Current Working Hospital Name">
+            <option value="" disabled selected>Select the hospital</option>
+            <option *ngFor="let data of hospitals" [value]="data">
+              {{ data }}
+            </option>
+          </select>
+          <small class="error"
+            *ngIf="doctorForm.get('associatedHospital')?.touched && doctorForm.get('associatedHospital')?.hasError('required')">
+            Hospital is required.
+          </small>
+  
+        </div>
+       
+  
+        
+        <div>
+          <label for="mobile">Mobile Number:</label>
+          <input id="mobile" type="text" formControlName="mobile" placeholder="Enter your mobile number" />
+          <small class="error"
+            *ngIf="doctorForm.get('mobile')?.touched && doctorForm.get('mobile')?.invalid">
+            Mobile number must be 10 digits.
+          </small>
+        </div>
+  
+       
+        <div>
+          <label for="email">Email:</label>
+          <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
+          <small class="error" *ngIf="doctorForm.get('email')?.touched && doctorForm.get('email')?.invalid">
+            A valid email is required.
+          </small>
+        </div>
+  
+       
+        <div class="text-center">
+            <button type="submit"   [disabled]="doctorForm.invalid">Update</button>
+        </div>
+       
+      </div>
+  
+    </form>
+  </div>

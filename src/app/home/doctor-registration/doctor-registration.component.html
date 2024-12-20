@@ -1,0 +1,51 @@
+<div class="form-container">
+  <h2 class="form-title">Doctor Registration</h2>
+  <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="Doctor_Name">Name:</label>
+      <input id="Doctor_Name" type="text" formControlName="name" placeholder="Enter Your Name" />
+      <small class="error" *ngIf="doctorForm.get('name')?.touched && doctorForm.get('name')?.invalid">
+        Name is required.
+      </small>
+    </div>
+
+    <div>
+      <label for="Doctor_Field_Study">Field Of Study:</label>
+      <input id="Doctor_Field_Study" type="text" formControlName="fieldOfStudy" placeholder="Field of study" />
+      <small class="error" *ngIf="doctorForm.get('fieldOfStudy')?.touched && doctorForm.get('fieldOfStudy')?.invalid">
+        Field of study is required.
+      </small>
+    </div>
+
+    <div>
+      <label for="Doctor_Hospital">Hospital:</label>
+      <select id="Doctor_Hospital" formControlName="associatedHospital">
+        <option value="" disabled selected>Select the hospital</option>
+        <option *ngFor="let data of doctors" [value]="data">
+          {{ data}}
+        </option>
+      </select>
+      <small class="error" *ngIf="doctorForm.get('associatedHospital')?.touched && doctorForm.get('associatedHospital')?.invalid">
+        Hospital is required.
+      </small>
+    </div>
+
+    <div>
+      <label for="Doctor_Mobile">Mobile Number:</label>
+      <input id="Doctor_Mobile" type="text" formControlName="mobile" placeholder="Enter your mobile number" />
+      <small class="error" *ngIf="doctorForm.get('mobile')?.touched && doctorForm.get('mobile')?.invalid">
+        Mobile number must be 10 digits.
+      </small>
+    </div>
+
+    <div>
+      <label for="Doctor_Email">Email:</label>
+      <input id="Doctor_Email" type="email" formControlName="email" placeholder="Enter your email" />
+      <small class="error" *ngIf="doctorForm.get('email')?.touched && doctorForm.get('email')?.invalid">
+        A valid email is required.
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="doctorForm.invalid">Register</button>
+  </form>
+</div>

@@ -1,0 +1,51 @@
+<h1>Book Doctor Appointment</h1>
+<div class="form-container">
+  <form [formGroup]="appointmentform" (ngSubmit)="onFormSubmit()">
+    <label for="hospital_name">Name of Hospital</label>
+
+    <select formControlName="hospital_name" id="hospital_name" (change)="onHospitalChange(appointmentform.value.hospital_name ?? '')" >
+        <option value="" disabled>Select a hospital</option>
+        <option *ngFor="let hospital of hospitals" [value]="hospital">{{ hospital}}</option>
+    </select>
+
+    <label for="doctor">Doctor</label>
+    <select formControlName="doctor" id="doctor">
+      <option value="" disabled selected>Choose Doctor</option>
+    
+      <ng-container *ngIf="doctors && doctors.length > 0; else noDoctors">
+        <option *ngFor="let doctor of doctors" [value]="doctor?.name?.split('-')[0]">
+          {{ doctor?.name || 'Unknown Doctor' }}
+        </option>
+      </ng-container>
+    
+      <ng-template #noDoctors>
+        <option value="" disabled>No doctors found</option>
+      </ng-template>
+    </select>
+    
+
+    <label for="date">Date</label>
+    <input type="date" id="date" formControlName="date" name="date" placeholder="Select a Date" [min]="currentDate" [max]="maxDate" >
+
+    <label for="timeslot">Time Slot</label>
+    <select formControlName="timeslot" name="timeslot" id="timeslot" >
+      <option value="" disabled >Select a Time Slot</option>
+      <option value="09:00">09:00 AM</option>
+      <option value="10:00">10:00 AM</option>
+      <option value="11:00">11:00 AM</option>
+      <option value="12:00">12:00 PM</option>
+      <option value="13:00">01:00 PM</option>
+      <option value="14:00">02:00 PM</option>
+      <option value="15:00">03:00 PM</option>
+      <option value="16:00">04:00 PM</option>
+      <option value="17:00">05:00 PM</option>
+      <option value="18:00">06:00 PM</option>
+      <option value="19:00">07:00 PM</option>
+    </select>
+
+    <label for="note">Appointment Note</label>
+    <input type="text" id="note" formControlName="note" placeholder="Any special requests or information" >
+
+    <button type="submit" [disabled]="appointmentform.invalid">Submit</button>
+  </form>
+</div>

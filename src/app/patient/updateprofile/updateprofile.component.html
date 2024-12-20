@@ -1,0 +1,85 @@
+<h1 >Update Profile</h1>
+<div class="form-container">
+  <form class="form" #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="personal_data.patientName" #name="ngModel" required pattern="^[a-zA-Z\s]+$" />
+        <small *ngIf="name.invalid && name.touched" class="error">Name is required and must contain only letters and spaces</small>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select name="gender" [(ngModel)]="personal_data.gender" #gender="ngModel" required>
+          <option value="" disabled>Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <small *ngIf="gender.invalid && gender.touched" class="error">Gender is required</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" [(ngModel)]="personal_data.age" #age="ngModel" required min="0" />
+        <small *ngIf="age.invalid && age.touched" class="error">Age is required and must be a positive number</small>
+      </div>
+
+      <div class="form-group">
+        <label for="father_name">Father's Name</label>
+        <input type="text" id="father_name" name="father_name" [(ngModel)]="personal_data.fathersName" #father_name="ngModel" required pattern="^[a-zA-Z\s]+$" />
+        <small *ngIf="father_name.invalid && father_name.touched" class="error">Father's name is required and must contain only letters and spaces</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" [(ngModel)]="personal_data.mobileNumber" #phone="ngModel" required pattern="^\d{10}$" />
+        <small *ngIf="phone.invalid && phone.touched" class="error">Valid phone number is required (10 digits)</small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="personal_data.email" #email="ngModel" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
+        <small *ngIf="email.invalid && email.touched" class="error">Valid email address is required</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="emergency">Emergency Contact</label>
+        <input type="tel" id="emergency" name="emergency" [(ngModel)]="personal_data.emergencyContact" #emergency="ngModel" required pattern="^\d{10}$" />
+        <small *ngIf="emergency.invalid && emergency.touched" class="error">Valid phone number for emergency contact is required (10 digits)</small>
+      </div>
+
+      <div class="form-group">
+        <label for="pcp">Primary Care Physician</label>
+        <input type="text" id="pcp" name="pcp" [(ngModel)]="personal_data.physician" #pcp="ngModel" required pattern="^[a-zA-Z\s.]+$" />
+        <small *ngIf="pcp.invalid && pcp.touched" class="error">Primary Care Physician name is required and must contain only letters, '.' and spaces</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="blood_type">Blood Type</label>
+        <select id="blood_type" name="blood_type" [(ngModel)]="personal_data.bloodType" #blood_type="ngModel" required>
+          <option value="" disabled>Select Blood Type</option>
+          <option value="A+ve">A+</option>
+          <option value="A-ve">A-</option>
+          <option value="B+ve">B+</option>
+          <option value="B-ve">B-</option>
+          <option value="AB+ve">AB+</option>
+          <option value="AB-ve">AB-</option>
+          <option value="O+ve">O+</option>
+          <option value="O-ve">O-</option>
+        </select>
+        <small *ngIf="blood_type.invalid && blood_type.touched" class="error">Blood type is required</small>
+      </div>
+    </div>
+    
+
+    <input type="submit" value="Update" [disabled]="form.invalid" />
+  </form>
+</div>

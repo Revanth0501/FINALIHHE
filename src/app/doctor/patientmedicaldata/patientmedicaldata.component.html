@@ -1,0 +1,15 @@
+<div class="appointment-cards">
+  <!-- Loop through the appointments -->
+  <div class="appointment-card" *ngFor="let appointment of appointmentDetails">
+    <div class="card-header">
+      <h4>Appointment Date: {{ appointment.appointmentDate  }}</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>Hospital Name:</strong> {{ appointment.hospitalName }}</p>
+      <p><strong>Doctor</strong> {{ appointment.doctor }}</p>
+      <p><strong>Lab Tests:</strong> {{ appointment.labtest }}</p>
+      <p><strong>Diagnosis:</strong> {{ appointment.diagonsis }}</p>
+      <p><strong>Medication:</strong> {{ appointment.medication }}</p>
+    </div>
+  </div>
+</div>

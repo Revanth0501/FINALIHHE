@@ -1,0 +1,503 @@
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto" style="color:white">
+                Integrated Health Harmony <div style="text-indent: 60px;">Enterprise - IHHE</div>
+
+            </h1>
+
+
+
+            <nav id="navbar" class="navbar" style="cursor: pointer;">
+                <ul>
+                    <li><a class="nav-link scrollto " (click)="scrollTo('hero')">Home</a></li>
+                    <li><a class="nav-link scrollto" (click)="scrollTo('about')">About</a></li>
+                    <li><a class="nav-link scrollto" (click)="scrollTo('services')">Services</a></li>
+                    <li><a class="nav-link scrollto" (click)="scrollTo('team')">Team</a></li>
+                    <li><a class="nav-link scrollto" (click)="scrollTo('contact')">Contact</a></li>
+                    <li class="dropdown btn-outline-info"><a href="#"><span>Login / SignUp</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a (click)="Login()">Login</a></li>
+                            <li class="dropdown"><a href="#"><span>Register</span> <i
+                                        class="bi bi-chevron-right"></i></a>
+                                <ul>
+                                    <li><a (click)="HospitalRegistartion()">Hospital Registration</a></li>
+                                    <li><a (click)="DoctorRegistration()">Doctor Registration</a></li>
+                                    <li><a (click)="PatientRegistration()">Patient Registration</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+        </div>
+    </header><!-- End Header -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <h1>Your Health Our Responsibility <i class="bi bi-emoji-smile"></i></h1>
+                    <h2>Our Team Passionately Innovating for Better Health Harmony Enterprise. </h2>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a (click)="scrollTo('about')" style="cursor:pointer" class="btn-get-started scrollto">Get
+                            Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/img/hos.jpg" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+    <main id="main">
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>About Us</h2>
+                </div>
+
+                <div class="row content">
+                    <div class="col-lg-6">
+                        <p>
+                            IHHE delivers innovative healthcare solutions that streamline processes, improve patient
+                            care, and promote
+                            seamless collaboration across healthcare systems
+                        </p>
+                        <ul>
+                            <li><i class="ri-check-double-line"></i> Streamlining processes for improved patient care.
+                            </li>
+                            <li><i class="ri-check-double-line"></i> Connecting healthcare providers for seamless
+                                service delivery.
+                            </li>
+                            <li><i class="ri-check-double-line"></i> Leveraging technology to optimize health outcomes.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <p>
+                            IHHE optimizes healthcare workflows to provide efficient and accessible patient care. Our
+                            platform drives
+                            innovation in healthcare delivery, fostering better outcomes for individuals and providers.
+                            We are
+                            dedicated to improve healthcare systems through technology and collaboration.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+
+        <!-- ======= Why Us Section ======= -->
+        <section id="why-us" class="why-us section-bg">
+            <div class="container-fluid" data-aos="fade-up">
+
+                <div class="row">
+
+                    <div
+                        class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                        <div class="content">
+                            <h3>Improving patient care and operational efficiency <strong>Healthcare to create seamless,
+                                    impactful
+                                    results.</strong></h3>
+                            <p>
+                                IHHE is committed to transforming healthcare by offering solutions that enhance patient
+                                care, streamline
+                                workflows, and improve clinical outcomes. Our platform empowers healthcare professionals
+                                to deliver
+                                high-quality care efficiently and securely.
+                            </p>
+                        </div>
+
+                        <div class="accordion-list">
+                            <ul>
+                                <li>
+                                    <a data-bs-toggle="collapse" class="collapse"
+                                        data-bs-target="#accordion-list-1"><span>01</span> How
+                                        can IHHE improve the efficiency of hospital operations? <i
+                                            class="bx bx-chevron-down icon-show"></i><i
+                                            class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                        <p>
+                                            IHHE offers advanced healthcare technology that streamlines administrative
+                                            tasks, optimizes
+                                            scheduling, and reduces waiting times for patients. By automating routine
+                                            tasks and integrating
+                                            systems across departments, hospitals can focus more on delivering quality
+                                            care rather than
+                                            dealing with operational inefficiencies.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
+                                        class="collapsed"><span>02</span>
+                                        How does IHHE support patient-centered care in hospitals? <i
+                                            class="bx bx-chevron-down icon-show"></i><i
+                                            class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            IHHE provides a platform that enables hospitals to offer personalized care
+                                            by collecting and
+                                            analyzing patient data. This data-driven approach allows healthcare
+                                            providers to tailor treatments
+                                            to individual needs, monitor progress in real-time, and ensure the best
+                                            outcomes for each patient.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3"
+                                        class="collapsed"><span>03</span>
+                                        How does IHHE ensure the security of sensitive patient data in hospitals? <i
+                                            class="bx bx-chevron-down icon-show"></i><i
+                                            class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            IHHE ensures robust data protection through advanced encryption methods and
+                                            strict adherence to
+                                            healthcare regulations like HIPAA. Hospitals using IHHE benefit from secure
+                                            cloud storage,
+                                            real-time monitoring, and strict access control measures, safeguarding
+                                            patient confidentiality and
+                                            preventing unauthorized access.
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
+                        style='background-image: url("assets/img/hospital.jpg");' data-aos="zoom-in-right"
+                        data-aos-delay="150">
+                        &nbsp;</div>
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
+
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <p>Our healthcare facility offers a wide range of medical services, ensuring that we meet the full
+                        spectrum of
+                        our patients' health needs. We are committed to providing expert care that spans from routine
+                        check-ups to
+                        complex treatments.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-calendar2-date-fill"></i></div>
+                            <h4><a href="#">Appointment Scheduling</a></h4>
+                            <p>Online Appointment Scheduling Patients can easily book, reschedule, or cancel.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+                        data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4><a href="#">Patient Registration</a></h4>
+                            <p>Patient Registration is a streamlined and secure entry point for healthcare facilities to
+                                welcome new
+                                patients and maintain updated records of returning patients.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                        data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-card-list"></i></div>
+                            <h4><a href="#">Electronic Health Records</a></h4>
+                            <p>EHRs are real-time record of a patient's health history that can be accessed and shared
+                                by authorized
+                                healthcare providers.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                        data-aos-delay="400">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-bar-chart-line"></i></div>
+                            <h4><a href="#">Reporting and Analysis</a></h4>
+                            <p>Reporting offers clear snapshots of patient care and operational metrics, essential for
+                                compliance and
+                                performance tracking.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======= Cta Section ======= -->
+        <section id="cta" class="cta">
+            <div class="container" data-aos="zoom-in">
+
+                <div class="row">
+                    <div class="col-lg-9 text-center text-lg-start">
+                        <h3>Call To Action</h3>
+                        <p> Despite our best efforts, unforeseen complications may arise. Our dedicated team prioritizes
+                            patient
+                            well-being, taking responsibility for adverse outcomes. We strive for optimal care and
+                            continuous
+                            improvement.</p>
+                    </div>
+                    <div class="col-lg-3 cta-btn-container text-center">
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Cta Section -->
+
+
+
+
+
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Team</h2>
+                    <p>Delivering exceptional care begins with compassion and efficiency. Our commitment is to provide
+                        seamless,
+                        patient-centered services while ensuring the highest standards of quality and professionalism.
+                        Together, we
+                        strive to create a healthier future through innovation, teamwork, and dedication to excellence
+                        in
+                        healthcare.
+                    </p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="pic"><img src="assets/img/team/Nikhil.jpg" class="img-fluid"
+                                    alt="Nikhil Kothamasu"></div>
+                            <div class="member-info">
+                                <h4>Nikhil Kothamasu</h4>
+                                <span>Frontend And Backend Developer</span>
+                                <p>Design a responsive framework using HTML, CSS, JavaScript, and Angular, while
+                                    ensuring robust functionality with ASP.NET and SQL Server.</p>
+                                <div class="social">
+                                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                                    <a href="https://www.instagram.com/nikhil_kothamasu23/"><i
+                                            class="ri-instagram-fill"></i></a>
+                                    <a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="pic"><img src="assets/img/team/Revanth.png" class="img-fluid"
+                                    alt="Uppula Revanth"></div>
+                            <div class="member-info">
+                                <h4>Uppula Revanth</h4>
+                                <span>Frontend And Backend Developer</span>
+                                <p>Design a responsive framework using HTML, CSS, JavaScript, and Angular, while
+                                    ensuring robust functionality with ASP.NET and SQL Server.</p>
+                                <div class="social">
+                                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                                    <a href="#"><i class="ri-instagram-fill"></i></a>
+                                    <a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="pic"><img src="assets/img/team/Satya.png" class="img-fluid"
+                                    alt="P.N.Satya Venkatesh"></div>
+                            <div class="member-info">
+                                <h4>P.N.Satya Venkatesh</h4>
+                                <span>Frontend And Backend Developer</span>
+                                <p>Design a responsive framework using HTML, CSS, JavaScript, and Angular, while
+                                    ensuring robust functionality with ASP.NET and SQL Server.</p>
+                                <div class="social">
+                                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                                    <a href="https://www.instagram.com/mr_satya_venkatesh/"><i class="ri-instagram-fill"></i></a>
+                                    <a href="http://www.linkedin.com/in/satya-venkatesh-pamidi-0a4235242"> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section><!-- End Team Section -->
+
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Delivering exceptional care begins with compassion and efficiency. Our commitment is to provide
+                        seamless,
+                        patient-centered services while ensuring the highest standards of quality and professionalism.
+                        Together, we
+                        strive to create a healthier future through innovation, teamwork, and dedication to excellence
+                        in
+                        healthcare.
+                    </p>
+                </div>
+                
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-12 col-xxl-6 d-md-flex justify-content-center">
+                            <div class="info">
+                                <div class="address">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h4>Location:</h4>
+                                    <p>Kalasalingam University,Krishnan Koil,626126,Tamil Nadu</p>
+                                </div>
+
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>Email:</h4>
+                                    <p>nikhilkothamasu1gmail.com</p>
+                                </div>
+
+                                <div class="phone">
+                                    <i class="bi bi-phone"></i>
+                                    <h4>Call:</h4>
+                                    <p>+91 9390209227</p>
+                                </div>
+
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2996.7827705519867!2d77.67721322353519!3d9.574750480210596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sKalasalingam%20Academy%20of%20Research%20and%20Education!5e1!3m2!1sen!2sin!4v1732292555565!5m2!1sen!2sin"
+                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+                        </div>
+
+                    </div>
+                
+            </div>
+
+
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>The Transformers</h3>
+                        <p>
+                            Kalasalingam University - KARE <br>
+                            Virudhnagar,Tamil Nadu<br>
+                            India - 626126<br>
+                            <strong>Phone:</strong> +91 XXXXXXXXXX<br>
+                            <strong>Email:</strong> ihhexxxgmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links" style="cursor:pointer;">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a (click)="scrollTo('hero')">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a (click)="scrollTo('about')">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a (click)="scrollTo('services')">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a (click)="scrollTo('team')">Team</a></li>
+
+                            <li><i class="bx bx-chevron-right"></i> <a (click)="scrollTo('contact')">Contact</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Registration's</h4>
+                        <ul style="cursor:pointer">
+                            <li><i class="bx bx-chevron-right "></i> <a (click)="HospitalRegistartion()">Hospital Registration</a>
+                            <li><i class="bx bx-chevron-right "></i> <a (click)="DoctorRegistration()">Doctor Registration</a>
+                            <li><i class="bx bx-chevron-right"></i> <a (click)="PatientRegistration()">Patient Registration</a>
+
+                           
+                                    
+                                    
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Social Networks</h4>
+                        <p>Stay connected with us through our social media platforms. Follow us for updates, insights,
+                            and the latest news!</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.instagram.com/mr_satya_venkatesh/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="http://www.linkedin.com/in/satya-venkatesh-pamidi-0a4235242" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>IHHE</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+
+            </div>
+
+
+
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+</body>

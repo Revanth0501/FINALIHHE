@@ -1,0 +1,126 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <img *ngIf="personal_data?.gender === 'Female'; else defaultImage"
+              src="https://cdn.dribbble.com/users/3526049/screenshots/6947241/media/d9fa44e8e307b14c8402f1ea7c3d7923.jpg"
+              alt="Patient Avatar" class="rounded-circle mb-3" width="150" />
+            <ng-template #defaultImage>
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Patient Avatar"
+                class="rounded-circle mb-3" width="150" />
+            </ng-template>
+  
+            <h4 class="text-primary">{{ personal_data?.patientName || 'N/A' }}</h4>
+            <p class="text-muted">{{ personal_data?.location || 'India' }}</p>
+          </div>
+        </div>
+  
+        <!-- Medical Data Section -->
+        <div class="card mt-3 shadow-sm">
+          <h5 class="card-header">Recent Medical Data</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <span><b>Weight (kg):</b></span>
+                <span>{{ latest_medical_data?.weight || 'N/A' }}</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <span><b>Heart Rate:</b></span>
+                <span>{{ latest_medical_data?.heart_rate || 'N/A' }}</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <span><b>Blood Pressure:</b></span>
+                <span style="font-weight: 480;">{{ latest_medical_data?.blood_pressure || 'N/A' }}</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <span><b>Temperature :</b></span>
+                <span style="font-weight: 480;">{{ latest_medical_data?.temperature || 'N/A' }}</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <span><b>Recent Diagnosis:</b></span>
+                <span>{{ latest_medical_data?.diagonsis || 'N/A' }}</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <span><b>Current Medication:</b></span>
+                <span>{{ latest_medical_data?.medication || 'N/A' }}</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <span><b>Medical Records:</b></span>
+                <a [routerLink]="['/patient/medicalrecords']" class="text-primary">View</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Right Column - Personal Information -->
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <h5 class="card-header">Personal Information</h5>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h6>User Name</h6>
+              <p>{{ personal_data?.patientName || 'N/A' }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h6>Gender</h6>
+              <p>{{ personal_data?.gender || 'N/A' }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h6>Age</h6>
+              <p>{{ personal_data?.age || 'N/A' }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h6>Father's Name</h6>
+              <p>{{ personal_data?.fathersName || 'N/A' }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h6>Phone</h6>
+              <p>{{ personal_data?.mobileNumber || 'N/A' }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h6>Emergency Contact</h6>
+              <p>{{ personal_data?.emergencyContact || 'N/A' }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h6>Email</h6>
+              <p>{{ personal_data?.email || 'N/A' }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h6>Primary Care Physician</h6>
+              <p>{{ personal_data?.physician || 'N/A' }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h6>Blood Type</h6>
+              <p>{{ personal_data?.bloodType || 'N/A' }}</p>
+            </div>
+          </div>
+        </div>
+  
+          
+      <div class="card mt-4 shadow-sm ">
+        <h5 class="card-header">Patient Analysis</h5>
+        <div class="card-body dashboard-card ">
+          <ag-charts  [options]="chartOptions"></ag-charts>
+  
+        </div>
+      </div>
+      </div>
+      
+  
+    </div>
+  </div>
+  

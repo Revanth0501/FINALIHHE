@@ -1,0 +1,38 @@
+<div class="title">
+    <p>Integrated Health Harmony Enterprise - Doctors Portal</p>
+  </div>
+  
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-4" style="background-color: white;">
+    <a class="navbar-brand"><b>IHHE</b></a>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+  
+       
+       
+  
+  
+        <li class="nav-item">
+          <a class="nav-link" (click)="Appointmnets()">Appointments</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" (click)="RaiseTicket()">Contact Us</a>
+        </li>
+        <li class="nav-item dropdown" [class.show]="isProfileDropdownOpen" (mouseenter)="toggleDropdown(true, 'profile')"
+          (mouseleave)="toggleDropdown(false, 'profile')">
+          <a class="nav-link dropdown-toggle" (click)="profile()" id="profileDropdown" role="button" aria-expanded="false">
+            <i class="fa fa-user profile-icon" style="color:#134f98;font-size: 24px;"></i>
+          </a>
+          <ul class="dropdown-menu" [class.show]="isProfileDropdownOpen" aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" (click)="profile()">View Profile</a></li>
+            <li><a class="dropdown-item" (click)="Update_Doctor_Profile()">Update Profile</a></li>
+            <li><a class="dropdown-item" (click)="Change_Password()">Change Password</a></li>
+            <li><a class="dropdown-item text-danger" (click)="Delete_Account()">Deactivate Account</a></li>
+            <li><a class="dropdown-item text-danger" (click)="Logout()">Log Out <i class="bi bi-box-arrow-right"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <router-outlet></router-outlet>

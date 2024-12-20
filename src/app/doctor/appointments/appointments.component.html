@@ -1,0 +1,33 @@
+<div class="heading-appointments">
+  <p>Scheduled Appointments</p>
+</div>
+
+<table *ngIf="todaysAppointments.length > 0" class="table table-striped table-responsive">
+  <thead class="thead-dark">
+    <tr>
+      <th>S.No</th>
+      <th>Patient Name</th>
+      <th>Date</th>
+      <th>Appointment Note</th>
+      <th>Time Slot</th>
+      <th>Patient Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="todaysAppointments.length === 0">
+      <td colspan="5" class="text-center">No Scheduled Appointments</td>
+    </tr>
+    <tr *ngFor="let appointment of todaysAppointments; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{appointment.patientName}}</td>
+      <td>{{appointment.appointmentDate | date: 'dd-MM-yyyy'}}</td>
+      <td>{{appointment.appointmentTime}}</td>
+      <td>{{appointment.appointmentNote}}</td>
+      <td><button class="btn btn-primary" (click)="onView(appointment.patientId)">View Details</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text-center" *ngIf="todaysAppointments.length === 0">
+  No Appointments Found
+</div>

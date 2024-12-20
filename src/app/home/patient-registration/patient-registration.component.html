@@ -1,0 +1,90 @@
+<div class="form-container">
+    <h1>Patient Registration Form</h1>
+    <div class="forms">
+      <form [formGroup]="registrationForm" (ngSubmit)="postRegistration()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="patientName" id="name" placeholder="Enter your Name" required>
+            <small *ngIf="registrationForm.get('patientName')?.invalid && registrationForm.get('patientName')?.touched" >* Name is required</small>
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" formControlName="age" id="age" placeholder="Enter your Age" required>
+            <small *ngIf="registrationForm.get('age')?.invalid && registrationForm.get('age')?.touched" >* Age must be a valid number</small>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="father_name">Father's Name</label>
+            <input type="text" formControlName="fatherName" id="father_name" placeholder="Enter your Father's Name" required>
+            <small *ngIf="registrationForm.get('fatherName')?.invalid && registrationForm.get('fatherName')?.touched" >* Father's Name is required</small>
+          </div>
+          <div class="form-group">
+            <label for="physician">Primary Care Physician</label>
+            <input type="text" formControlName="physicianName" id="physician" placeholder="Enter Physician's Name" required>
+            <small *ngIf="registrationForm.get('physicianName')?.invalid && registrationForm.get('physicianName')?.touched" >* Physician's Name is required</small>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select formControlName="gender" id="gender" required>
+              <option value="" disabled>Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="TransGender">Transgender</option>
+            </select>
+            <small *ngIf="registrationForm.get('gender')?.invalid && registrationForm.get('gender')?.touched" >* Gender is required</small>
+          </div>
+          <div class="form-group">
+            <label for="height">Height</label>
+            <input formControlName="height" type="number" id="height" placeholder="Enter Height (in cm)" required>
+            <small *ngIf="registrationForm.get('height')?.invalid && registrationForm.get('height')?.touched" >* Height is required</small>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="blood_type">Blood Type</label>
+            <select formControlName="bloodType" id="blood_type" required>
+              <option value="" disabled>Select Blood Type</option>
+              <option value="A+ve">A+ve</option>
+              <option value="A-ve">A-ve</option>
+              <option value="B+ve">B+ve</option>
+              <option value="B-ve">B-ve</option>
+              <option value="AB+ve">AB+ve</option>
+              <option value="AB-ve">AB-ve</option>
+              <option value="O+ve">O+ve</option>
+              <option value="O-ve">O-ve</option>
+              <option value="Not Specified">Not Specified</option>
+            </select>
+            <small *ngIf="registrationForm.get('bloodType')?.invalid && registrationForm.get('bloodType')?.touched" >* Blood Type is required</small>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" id="email" placeholder="Enter your Email" required>
+            <small *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" >* Enter a valid email</small>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input formControlName="mobileNumber" type="text" id="phone" placeholder="Enter your Phone Number" required>
+            <small *ngIf="registrationForm.get('mobileNumber')?.invalid && registrationForm.get('mobileNumber')?.touched" >* Phone number is required</small>
+          </div>
+          <div class="form-group">
+            <label for="emergency_contact">Emergency Contact</label>
+            <input formControlName="emergencyContact" type="text" id="emergency_contact" placeholder="Enter Emergency Contact Number" required>
+            <small *ngIf="registrationForm.get('emergencyContact')?.invalid && registrationForm.get('emergencyContact')?.touched" >* Emergency contact is required</small>
+          </div>
+        </div>
+        
+        <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+      </form>
+    </div>
+  </div>
+  

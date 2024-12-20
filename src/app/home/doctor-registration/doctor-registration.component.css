@@ -1,0 +1,113 @@
+/* Container Styles */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    background: url('https://img.freepik.com/free-photo/top-view-stethoscope_23-2148519789.jpg?ga=GA1.1.1536931783.1734534894&semt=ais_hybrid') center/cover no-repeat;
+}
+
+/* Form Title Styles */
+h2.form-title {
+    text-align: center;
+    color: #134f98;
+    font-size: 36px;
+    font-weight: 650;
+    margin: 15px 0 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    gap: 20px;
+    border: 2px solid #134f98;
+    box-shadow: 0 4px 10px rgba(19, 79, 152, 0.6);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Label Styles */
+label {
+    font-size: 16px;
+    color: #134f98;
+    margin-bottom: 5px;
+}
+
+/* Input and Select Styles */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:hover, select:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 1px solid #134f98;
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+    background-color: #134f98;
+    color: white;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: white;
+    color: #134f98;
+    border: 2px solid #134f98;
+}
+
+button[type="submit"]:focus {
+    outline: none;
+}
+
+/* Disabled Button Styles */
+button[disabled] {
+    color: gray;
+    border: none;
+    background-color: #ccc;
+}
+
+button[disabled]:hover {
+    cursor: not-allowed;
+    color: gray;
+    background-color: #ccc;
+}
+
+/* Option Styles */
+select option {
+    color: black;
+}
+
+/* Error Message Styles */
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* Additional Margin for Form in Container */
+.form-container > form {
+    margin-top: 20px;
+}

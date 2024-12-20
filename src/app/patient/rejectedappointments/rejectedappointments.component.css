@@ -1,0 +1,53 @@
+
+.heading-appointments {
+    text-align: center;
+    color: #0066cc;
+    font-size: 40px;
+    padding-top: 20px;
+    font-weight: 600;
+}
+
+table {
+    width: 80%;
+    margin: 10px auto;
+    table-layout: auto; 
+    border-collapse: collapse;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;     
+    overflow: hidden;         
+    text-overflow: ellipsis;
+}
+
+.table td {
+    font-weight: normal;
+}
+
+
+.table tbody tr:nth-child(odd) {
+    background-color: #3f459576;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #2c2656;
+}
+
+.table th {
+    font-weight: bold;
+    background-color: #134f98;
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+    font-size:23px;
+    color: #333; 
+    padding: 20px;
+    font-weight: 500;
+}

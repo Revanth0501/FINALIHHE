@@ -1,0 +1,57 @@
+<body>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="card p-5 shadow-lg"
+          style="width: 350px; background-color: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+        <div class="text-center">
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="userRole" class="form-label text-light">User Role</label>
+            <div class="input-group">
+              <span class="input-group-text bg-dark text-light">
+                <i class="bi bi-person-fill"></i>
+              </span>
+              <select class="form-control" formControlName="userRole" id="userRole">
+                <option value="" disabled selected>Select User Role</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Patient">Patient</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Admin">Admin</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label text-light">Username</label>
+            <div class="input-group">
+              <span class="input-group-text bg-dark text-light">
+                <i class="bi bi-person-fill"></i>
+              </span>
+              <input type="text" class="form-control" formControlName="username" id="username" placeholder="Username" />
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="password" class="form-label text-light">Password</label>
+            <div class="input-group">
+              <span class="input-group-text bg-dark text-light">
+                <i class="bi bi-lock-fill"></i>
+              </span>
+              <input [type]="PasswordVisible ? 'text' : 'password' " class="form-control" formControlName="password" id="password" placeholder="Password" />
+              <button type="button" (click)="togglePasswordVisibility()" class="toggle-btn">
+                <i *ngIf="PasswordVisible" class="fa fa-eye"></i>
+                <i *ngIf="!PasswordVisible" class="fa fa-eye-slash"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-success text-center"
+                  style="padding: 10px 20px; width:60%; font-size: 15px; color: white; font-weight: bold; border-radius: 5px; box-shadow: 0 4px 6px hsla(187, 86%, 42%, 0.102);">
+                LOGIN
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  
