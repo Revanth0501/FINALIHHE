@@ -1,0 +1,67 @@
+<div class="form-container pt-4">
+    <div class="form-wrapper">
+      <h2 class="form-title" style="color:dodgerblue">Appointment Details</h2>
+      <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+  
+        <div class="form-group">
+          <label for="labtest">Lab Test:</label>
+          <input id="labtest" type="text" formControlName="labtest" placeholder="Enter lab test" />
+          <small class="error" *ngIf="appointmentForm.get('labtest')?.touched && appointmentForm.get('labtest')?.invalid">
+            Lab test is required.
+          </small>
+        </div>
+  
+        <div class="form-group">
+          <label for="diagonsis">Diagnosis:</label>
+          <input id="diagonsis" type="text" formControlName="diagonsis" placeholder="Enter diagnosis" />
+          <small class="error" *ngIf="appointmentForm.get('diagonsis')?.touched && appointmentForm.get('diagonsis')?.invalid">
+            Diagnosis is required.
+          </small>
+        </div>
+  
+        <div class="form-group">
+          <label for="medication">Medication:</label>
+          <input id="medication" type="text" formControlName="medication" placeholder="Enter medication" />
+          <small class="error" *ngIf="appointmentForm.get('medication')?.touched && appointmentForm.get('medication')?.invalid">
+            Medication is required.
+          </small>
+        </div>
+  
+        <div class="form-group">
+          <label for="weight">Weight:</label>
+          <input id="weight" type="number" formControlName="weight" placeholder="Enter weight" />
+          <small class="error" *ngIf="appointmentForm.get('weight')?.touched && appointmentForm.get('weight')?.invalid">
+            Weight is required.
+          </small>
+        </div>
+  
+        <div class="form-group">
+          <label for="prescritionnote">Prescription Note:</label>
+          <input id="prescritionnote" type="text" formControlName="prescritionnote" placeholder="Enter prescription note" />
+          <small class="error" *ngIf="appointmentForm.get('prescritionnote')?.touched && appointmentForm.get('prescritionnote')?.invalid">
+            Prescription note is required.
+          </small>
+        </div>
+  
+        <div class="form-group">
+          <label for="blood_pressure">Blood Pressure:</label>
+          <input id="blood_pressure" type="text" formControlName="blood_pressure" placeholder="Enter blood pressure" />
+          <small class="error" *ngIf="appointmentForm.get('blood_pressure')?.touched && appointmentForm.get('blood_pressure')?.invalid">
+            Blood pressure is required.
+          </small>
+        </div>
+  
+        <div class="form-group">
+          <label for="heart_rate">Heart Rate:</label>
+          <input id="heart_rate" type="number" formControlName="heart_rate" placeholder="Enter heart rate" />
+          <small class="error" *ngIf="appointmentForm.get('heart_rate')?.touched && appointmentForm.get('heart_rate')?.invalid">
+            Heart rate is required.
+          </small>
+        </div>
+  
+        <button type="submit" [disabled]="appointmentForm.invalid">Update Appointment</button>
+  
+      </form>
+    </div>
+  </div>
+  

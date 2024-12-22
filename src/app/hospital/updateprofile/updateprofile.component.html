@@ -1,0 +1,86 @@
+<title class="pt-13">Profile Update</title>
+<div class="title pt-2"> Update Profile</div>
+<body>
+    <div class="container">
+        <div class="content">
+            <form [formGroup]="Update_Hospital_Profile" (ngSubmit)="on_Submit()">
+                <div class="user-details">
+
+                    <div class="input-box">
+                        <label class="details" for="hospitalName" style="font-weight:600;">Hospital Name</label>
+                        <input type="text" id="hospitalName" name="hospitalName" formControlName="hospitalName" placeholder="Enter your name">
+                        <small class="error" 
+                        *ngIf="Update_Hospital_Profile.get('hospitalName')?.touched && Update_Hospital_Profile.get('hospitalName')?.invalid">
+                            *Hospital name is required. 
+                          </small>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details" for="hospitalEmail" style="font-weight:600;">Email</label>
+                        <input type="text" id="hospitalEmail" name="hospitalEmail" formControlName="hospitalEmail" placeholder="Enter your email">
+                        <small class="error"  
+                        *ngIf="Update_Hospital_Profile.get('hospitalEmail')?.touched && Update_Hospital_Profile.get('hospitalEmail')?.invalid">
+                            *Hospital email is required. 
+                          </small>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details" for="hospitalPhonenumber" style="font-weight:600;">Phone Number</label>
+                        <input type="text" id="hospitalPhonenumber" name="hospitalPhonenumber" formControlName="hospitalPhoneNumber" placeholder="Enter your number">
+                        <small class="error"  
+                        *ngIf="Update_Hospital_Profile.get('hospitalPhonenumber')?.touched && Update_Hospital_Profile.get('hospitalPhonenumber')?.invalid">
+                            *Hospital number is required. 
+                          </small>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details" for="avilableFacilities" style="font-weight:600;">Available Facilities</label>
+                        <input type="text" id="avilableFacilities" name="avilableFacilities" formControlName="avilableFacilities" placeholder="Enter your Available Facilities">
+                        <small class="error"  
+                        *ngIf="Update_Hospital_Profile.get('avilableFacilities')?.touched && Update_Hospital_Profile.get('avilableFacilities')?.invalid">
+                            *Hospital facilities are required. 
+                          </small>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details" for="hospitalType" style="font-weight:600;">Hospital Type</label>
+                        <select id="hospitalType" name="hospitalType" formControlName="hospitalType" class="form-control">
+                            <option [disabled]="true"><span>Select hospital type</span></option>
+                            <option value="General"><span>General</span></option>
+                            <option value="Specialty"><span>Specialty</span></option>
+                            <option value="Multi-specialty"><span>Multi-specialty</span></option>
+                        </select>
+                        <small class="error"  
+                        *ngIf="Update_Hospital_Profile.get('hospitalType')?.touched && Update_Hospital_Profile.get('hospitalType')?.invalid">
+                            *Hospital type is required. 
+                          </small>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details" for="hospitalAddress" style="font-weight:600;">Address</label>
+                        <input type="text" id="hospitalAddress" name="hospitalAddress" formControlName="hospitalAddress" placeholder="Confirm your Address">
+                        <small class="error"  
+                        *ngIf="Update_Hospital_Profile.get('hospitalAddress')?.touched && Update_Hospital_Profile.get('hospitalAddress')?.invalid">
+                            *Address is required. 
+                          </small>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details" for="hospitalOwnershipType" style="font-weight:600;">Hospital Ownership Type</label>
+                        <input id="hospitalOwnershipType" name="hospitalOwnershipType" type="text" formControlName="hospitalOwnershipType" placeholder="Enter your name: Trust (or) Specialty">
+                        <small class="error"  
+                        *ngIf="Update_Hospital_Profile.get('hospitalOwnershipType')?.touched && Update_Hospital_Profile.get('hospitalOwnershipType')?.invalid">
+                          *Hospital ownership type is required. 
+                        </small>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="text-center">
+                        <button class="submit-btn" type="submit" style="width:100px;">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,32 @@
+<div class="heading-appointments">
+    <p>List of Inactive  Doctors</p>
+  </div>
+  
+  <div *ngIf="doctors.length === 0" class="no-patients-message">
+    <p>No Doctors available.</p>
+  </div>
+  
+  <table *ngIf="doctors.length > 0" class="table table-striped table-responsive">
+    <thead class="thead-dark">
+      <tr>
+        <th>S.No</th>
+        <th>Doctor Id</th>
+        <th>Doctor Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doctor of doctors; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ doctor.doctor_Id }}</td>
+        <td>{{ doctor.name }}</td>
+        <td>
+          <!-- <button (click)="viewProfile(doctor.doctor_Id)">View Profile</button> -->
+          <button (click)="updateStatus(doctor.doctor_Id)">Update Status</button>
+          <!-- <button (click)="changePassword(doctor.doctorId)">Change Password</button>
+          <button (click)="deleteDoctor(doctor.doctorId)">Deactivate Account</button> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

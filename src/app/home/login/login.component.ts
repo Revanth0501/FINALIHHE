@@ -73,7 +73,7 @@ export class LoginComponent {
             case "Hospital":
               this.sharedservice.setHospitalId(response.hospitalId);
               console.log("Hospital Id in login:", this.sharedservice.getHospitalId());
-              this.router.navigate(['hospital']);
+              this.router.navigate(['hospital/profile']);
               break;
     
             default:

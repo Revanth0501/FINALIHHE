@@ -44,6 +44,14 @@ const routes: Routes = [
       }
 
     ]
+  },
+  {
+    path:"profileadmin",
+    component:ProfileComponent
+  },
+  {
+    path:"updateprofileadmin",
+    component:UpdateprofileComponent
   }
 ];
 

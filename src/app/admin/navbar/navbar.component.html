@@ -1,0 +1,81 @@
+<div class="title">
+    <p>Integrated Health Harmony Enterprise - Admins Portal</p>
+  </div>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav">
+  
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">DashBoard</a>
+        </li> -->
+  
+        <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'patients')" (mouseleave)="toggleDropdown(false, 'patients')">
+          <a class="nav-link dropdown-toggle" id="patientsDropDown" role="button" aria-haspopup="true" aria-expanded="false">
+            Patients
+          </a>
+          <ul class="dropdown-menu" [class.show]="isPatientDropdownOpen" aria-labelledby="patientsDropDown">
+            <li><a class="dropdown-item" (click)="getActivePatients()">Active Patients</a></li>
+            <li><a class="dropdown-item" (click)="getInActivePatients()">Inactive Patients</a></li>
+          </ul>
+        </li>
+  
+        <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'doctors')" (mouseleave)="toggleDropdown(false, 'doctors')">
+          <a class="nav-link dropdown-toggle" id="doctorDropDown" role="button" aria-haspopup="true" aria-expanded="false">
+            Doctors
+          </a>
+          <ul class="dropdown-menu" [class.show]="isDoctorDropdownOpen" aria-labelledby="doctorDropDown">
+            <li><a class="dropdown-item" (click)="getActiveDoctors()">Active Doctors</a></li>
+            <li><a class="dropdown-item" (click)="getInActiveDoctors()">Inactive Doctors</a></li>
+          </ul>
+        </li>
+  
+  
+        <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'hospitals')" (mouseleave)="toggleDropdown(false, 'hospitals')">
+          <a class="nav-link dropdown-toggle" id="hospitalsDropDown" role="button" aria-haspopup="true" aria-expanded="false">
+            Hospitals
+          </a>
+          <ul class="dropdown-menu" [class.show]="isHospitalsDropdownOpen" aria-labelledby="hospitalsDropDown">
+            <li><a class="dropdown-item" (click)="getActiveHospitals()">Active Hospitals</a></li>
+            <li><a class="dropdown-item" (click)="getInActiveHospitals()">Inactive Hospitals</a></li>
+          </ul>
+        </li>
+  
+        <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'appointments')" (mouseleave)="toggleDropdown(false, 'appointments')">
+          <a class="nav-link dropdown-toggle" id="appointmentsDropdown2" role="button" aria-haspopup="true" aria-expanded="false">
+            Appointments 
+          </a>
+          <ul class="dropdown-menu" [class.show]="isAppointmentDropdownOpen" aria-labelledby="appointmentsDropdown2">
+            <li><a class="dropdown-item" (click)="getVisited()">Visited Appointments</a></li>
+            <li><a class="dropdown-item" (click)="getNonVisited()">Non Visited Appointments</a></li>
+            
+          </ul>
+        </li>
+  
+        <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'tickets')" (mouseleave)="toggleDropdown(false, 'tickets')">
+          <a class="nav-link dropdown-toggle" id="ticketsDropDown" role="button" aria-haspopup="true" aria-expanded="false">
+            Tickets
+          </a>
+          <ul class="dropdown-menu" [class.show]="isTicketsDropdownOpen" aria-labelledby="ticketsDropDown">
+            <li><a class="dropdown-item" (click)="getPendingTickets()">Pending Tickets</a></li>
+            <li><a class="dropdown-item" (click)="getSolvedTickets()">Solved Tickets</a></li>
+          </ul>
+        </li>
+  
+        <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'registrations')" (mouseleave)="toggleDropdown(false, 'registrations')">
+          <a class="nav-link dropdown-toggle" id="registrationsDropDown" role="button" aria-haspopup="true" aria-expanded="false">
+            Registrations
+          </a>
+          <ul class="dropdown-menu" [class.show]="isRegistrationsDropdownOpen" aria-labelledby="registrationsDropDown">
+            <li><a class="dropdown-item" (click)="registerPatient()">Patient Registration</a></li>
+            <li><a class="dropdown-item" (click)="registerDoctor()">Doctor Registration</a></li>
+            <li><a class="dropdown-item" (click)="registerHospital()">Hospital Registration</a></li>
+          </ul>
+        </li>
+  
+      </ul>
+    </div>
+  </nav>
+  
+  <router-outlet></router-outlet>
+  

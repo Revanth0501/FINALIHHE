@@ -1,0 +1,32 @@
+<div class="heading-appointments">
+    <p>List of Active  Hospitals</p>
+  </div>
+  
+  <div *ngIf="hospitals.length === 0" class="no-patients-message">
+    <p>No Hospitals available.</p>
+  </div>
+  
+  <table *ngIf="hospitals.length > 0" class="table table-striped table-responsive">
+    <thead class="thead-dark">
+      <tr>
+        <th>S.No</th>
+        <th>Hospital Id</th>
+        <th>Hospital Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hospital of hospitals; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ hospital.hospitalId }}</td>
+        <td>{{ hospital.hospitalName}}</td>
+        <td>
+          <button (click)="viewProfile( hospital.hospitalId )">View Profile</button>
+          <button (click)="updateDetails( hospital.hospitalId )">Update Details</button>
+          <button (click)="viewPassword( hospital.hospitalId )">Get Password</button>
+          <button (click)="deleteHospital( hospital.hospitalId )">Deactivate Account</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

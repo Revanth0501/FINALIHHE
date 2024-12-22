@@ -1,0 +1,38 @@
+<div class="heading-appointments">
+    <p>Visited Appointments</p>
+  </div>
+  
+  <div *ngIf="appointments.length === 0" class="no-patients-message">
+    <p>No Appointments available.</p>
+  </div>
+  
+  <table  class="table table-striped table-responsive">
+    <thead class="thead-dark">
+      <tr  *ngIf="appointments.length >  0">
+        <th>S.No</th>
+        <th>Appointment Id</th>
+        <th>Patient Id</th>
+        <th>Hospital Name</th>
+        <th>Doctor</th>
+        <th>Appointment Date</th>
+        <th>Appointment Time Slot</th>
+        <!-- <th>Action</th> -->
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointments ; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{appointment.appointmentId}}</td>
+        <td>{{appointment.patientId}}</td>
+        <td>{{appointment.hospitalName}}</td>
+        <td>{{appointment.doctor}}</td>
+        <td>{{appointment.appointmentDate }}</td>
+        <td>{{appointment.appointmentTime}}</td>
+        <!-- <td>
+          <button (click)="updateAppointmentData(appointment.appointmentId)">Update Appointment Data</button>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+  

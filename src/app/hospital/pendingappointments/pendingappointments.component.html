@@ -1,0 +1,39 @@
+<div class="heading-appointments">
+    <p>Pending Appointments</p>
+
+</div>
+
+
+<table *ngIf="pendingAppointments.length > 0" class="table table-striped table-responsive">
+    <thead class="thead-dark">
+        <tr>
+            <th>S No.</th>
+            <th>Doctor Name</th>
+            <th>Appointment Date</th>
+            <th>Time</th>
+            <th>Note</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let appointment of pendingAppointments; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ appointment.doctor }}</td>
+            <td>{{ appointment.appointmentDate | date: 'dd-MM-yyyy'}}</td>
+            <td>{{ appointment.appointmentTime }}</td>
+            <td>{{ appointment.appointmentNote }}</td>
+            
+            
+            <td>
+                <button class="btn btn-success" (click)="Approve(appointment.appointmentId)">Approve</button>
+                <button class="btn btn-danger" (click)="Reject(appointment.appointmentId)"
+                    style="margin-left: 10%;">Reject</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="text-center" *ngIf="pendingAppointments.length === 0">
+    No Appointments Found
+</div>

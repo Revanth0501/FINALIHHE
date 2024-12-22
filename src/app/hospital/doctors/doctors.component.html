@@ -1,0 +1,15 @@
+<div class="doctor-card-container">
+    <div class="doctor-card" *ngFor="let doctor of filteredDoctors" >
+      <div class="card-header">
+        <h4>{{ doctor.name }}</h4>
+      </div>
+      <div class="card-body">
+        <p><strong>Specialization:</strong> {{ doctor.fieldOfStudy}}</p>
+        <p><strong>Mobile:</strong> {{ doctor.mobile }}</p>
+        <p><strong>Email:</strong> {{ doctor.email}}</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  
