@@ -11,7 +11,7 @@
       <tr *ngIf="appointments.length >  0">
         <th>S.No</th>
         <th>Appointment Id</th>
-        <th>Patient Id</th>
+        <!-- <th>Patient Id</th> -->
         <th>Hospital Name</th>
         <th>Doctor</th>
         <th>Appointment Date</th>
@@ -24,7 +24,7 @@
       <tr *ngFor="let appointment of appointments ; let i=index">
         <td>{{i+1}}</td>
         <td>{{appointment.appointmentId}}</td>
-        <td>{{appointment.patientId}}</td>
+        <!-- <td>{{appointment.patientId}}</td> -->
         <td>{{appointment.hospitalName}}</td>
         <td>{{appointment.doctor}}</td>
         <td>{{appointment.appointmentDate | date:'dd-MM-yyyy'}}</td>

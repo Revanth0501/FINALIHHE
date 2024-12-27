@@ -1,0 +1,15 @@
+<div class="form-container pt-4" style="margin-top: 50px;">
+    <h2 class="form-title">Doctor Profile</h2>
+    <div class="profile-card">
+      <div class="profile-image">
+        <i class="fa-solid fa-user-doctor"></i>
+      </div>
+      <div class="profile-details">
+        <h3 class="doctor-name">{{ paricular_data[0]?.name || 'NA' }}</h3>
+        <p><strong>Field of Study:</strong> {{ paricular_data[0]?.fieldOfStudy|| 'NA' }}</p>
+        <p><strong>Hospital:</strong> {{ paricular_data[0]?.associatedHospital || 'NA' }}</p>
+        <p><strong>Mobile Number:</strong> {{ paricular_data[0]?.mobile|| 'NA' }}</p>
+        <p><strong>Email:</strong> {{ paricular_data[0]?.email || 'NA' }}</p>
+      </div>
+    </div>
+  </div>

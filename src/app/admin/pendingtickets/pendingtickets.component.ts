@@ -86,7 +86,7 @@ export class PendingticketsComponent implements OnInit, AfterViewInit, OnDestroy
       return;
     }
 
-    const apiUrl = `https://localhost:7287/api/Admin/UpdateTicketStatus?id=${ticketId}`;
+    const apiUrl = `https://localhost:7287/api/Admin/TicketIsuueSolved?id=${ticketId}`;
     this.http.put(apiUrl, {}).subscribe({
       next: () => {
         Swal.fire('Success', 'Ticket status updated successfully.', 'success');

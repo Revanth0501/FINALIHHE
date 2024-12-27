@@ -6,9 +6,9 @@
     <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
       <ul class="navbar-nav">
   
-        <!-- <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">DashBoard</a>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/dashboard" routerLinkActive="active">DashBoard</a>
+        </li>
   
         <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'patients')" (mouseleave)="toggleDropdown(false, 'patients')">
           <a class="nav-link dropdown-toggle" id="patientsDropDown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -62,7 +62,7 @@
           </ul>
         </li>
   
-        <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'registrations')" (mouseleave)="toggleDropdown(false, 'registrations')">
+        <!-- <li class="nav-item dropdown" (mouseenter)="toggleDropdown(true, 'registrations')" (mouseleave)="toggleDropdown(false, 'registrations')">
           <a class="nav-link dropdown-toggle" id="registrationsDropDown" role="button" aria-haspopup="true" aria-expanded="false">
             Registrations
           </a>
@@ -72,7 +72,7 @@
             <li><a class="dropdown-item" (click)="registerHospital()">Hospital Registration</a></li>
           </ul>
         </li>
-  
+   -->
       </ul>
     </div>
   </nav>

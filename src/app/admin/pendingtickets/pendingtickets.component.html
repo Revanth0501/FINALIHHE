@@ -1,4 +1,4 @@
-<h2 class="text-center" style="font-size:40px;">Pending Ticket's</h2>
+<h2 class="text-center" style="font-size:40px;">Pending Tickets</h2>
 
 <div class="container">
   <div class="row">
@@ -22,7 +22,7 @@
             <td>{{ ticket?.userType }}</td>
             <td>{{ ticket?.issue }}</td>
             <td>
-              <button class="btn btn-success" *ngIf="ticket?.ticketId" (click)="Solved(ticket.ticketId)">Update</button>
+              <button class="btn btn-success" *ngIf="ticket?.ticketId" (click)="Solved(ticket.ticketId)">Update Status</button>
             </td>
           </tr>
         </tbody>

@@ -64,15 +64,6 @@ const routes: Routes = [
         component:ContactusComponent
       }
     ]
-  },
-
-  {
-    path:"profileadmin",
-    component:ProfileComponent
-  },
-  {
-    path:"updateprofileadmin",
-    component:UpdateprofileComponent
   }
 
 ];

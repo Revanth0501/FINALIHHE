@@ -37,7 +37,7 @@ export class ActivepatientsComponent {
 
   viewProfile(id: number): void {
    this.sharedservice.setPatientId(id);
-   this.router.navigate(['/patient/profileadmin']);
+   this.router.navigate(['/admin/patientprofile']);
   }
 
   updateDetails(id: number): void {

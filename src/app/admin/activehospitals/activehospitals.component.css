@@ -81,7 +81,7 @@ body {
   transform: translateY(-2px);
 }
 
-.table button:nth-child(2) {
+/* .table button:nth-child(2) {
   background-color: #ffc107; 
 }
 
@@ -97,13 +97,13 @@ body {
 .table button:nth-child(3):hover {
   background-color: #138496;
   transform: translateY(-2px);
-}
+} */
 
-.table button:nth-child(4) {
+.table button:nth-child(2) {
   background-color: rgb(204, 29, 29);
 }
 
-.table button:nth-child(4):hover {
+.table button:nth-child(2):hover {
   background-color: rgb(228, 35, 35);
   transform: translateY(-2px);
 }

@@ -77,7 +77,7 @@ export class LoginComponent {
               break;
     
             default:
-              this.router.navigate(['admin']);
+              this.router.navigate(['/admin/dashboard']);
               break;
           }
         });

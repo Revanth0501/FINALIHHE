@@ -36,7 +36,7 @@ export class ActivehospitalsComponent {
   viewProfile(id: string): void {
     
     this.sharedservice.setHospitalId(id);
-    this.router.navigate(['/hospital/profileadmin']);
+    this.router.navigate(['/admin/hospitalprofile']);
   }
 
   updateDetails(id:string): void {

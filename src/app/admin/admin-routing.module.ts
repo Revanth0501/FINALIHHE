@@ -11,6 +11,10 @@ import { PendingticketsComponent } from './pendingtickets/pendingtickets.compone
 import { SolvedticketsComponent } from './solvedtickets/solvedtickets.component';
 import { ActivehospitalsComponent } from './activehospitals/activehospitals.component';
 import { InactivehospitalsComponent } from './inactivehospitals/inactivehospitals.component';
+import { PatientprofileComponent } from './patientprofile/patientprofile.component';
+import { DoctorprofileComponent } from './doctorprofile/doctorprofile.component';
+import { HospitalprofileComponent } from './hospitalprofile/hospitalprofile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -22,6 +26,10 @@ const routes: Routes = [
         component:NavbarComponent
       },
       {
+        path:"dashboard",
+        component:DashboardComponent
+      },
+      {
         path:"activepatients",
         component:ActivepatientsComponent
       },
@@ -30,8 +38,17 @@ const routes: Routes = [
         component:InactivepatientsComponent
       },
       {
+        path:"patientprofile",
+        component:PatientprofileComponent
+      },
+      {
         path:"activedoctors",
         component:ActivedoctorsComponent
+      },
+      
+      {
+        path:"doctorprofile",
+        component:DoctorprofileComponent
       },
       {
         path:"inactivedoctors",
@@ -40,6 +57,10 @@ const routes: Routes = [
       {
         path:"activehospitals",
         component:ActivehospitalsComponent
+      },
+      {
+        path:"hospitalprofile",
+        component:HospitalprofileComponent
       },
       {
         path:"inactivehospitals",

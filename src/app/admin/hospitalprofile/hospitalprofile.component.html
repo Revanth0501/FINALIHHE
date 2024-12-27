@@ -1,0 +1,115 @@
+<body>
+    <div class="container mt-5" id="home">
+      <div class="row">
+        <!-- Left Column: Hospital Logo and Basic Info -->
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              
+              <img 
+                src="https://i.postimg.cc/N0DKWPmj/people-walking-sitting-hospital-building-city-clinic-glass-exterior-flat-vector-illustration-medical.jpg" 
+                class="img-fluid rounded-4 w-100" 
+                style="object-fit: cover; height: 300px;" 
+                alt="Hospital Logo" />
+  
+              <h4>{{hospital_data[0]?.hospitalName || 'NA'}}</h4>
+              <p class="text-muted">{{hospital_data[0]?.hospitalType || 'NA'}}</p>
+              <p class="text-muted">{{hospital_data[0]?.hospitalAddress || 'NA'}}</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Right Column: Detailed Hospital Info -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="d-flex p-2">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Hospital Name</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{hospital_data[0]?.hospitalName || 'NA'}}
+                      </div>
+                    </div>
+                    <hr>
+  
+                    <div class="d-flex p-2">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Phone</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{hospital_data[0]?.hospitalPhoneNumber || 'NA'}}
+                      </div>
+                    </div>
+                    <hr>
+  
+                    <div class="d-flex p-2">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Established Date</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{hospital_data[0]?.hospitalEstablishedDate || 'NA'}}
+                      </div>
+                    </div>
+                    <hr>
+  
+                    <div class="d-flex p-2">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Address</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{hospital_data[0]?.hospitalAddress || 'NA'}}
+                      </div>
+                    </div>
+                    <hr>
+  
+                    <div class="d-flex p-2">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Email</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{hospital_data[0]?.hospitalEmail || 'NA'}}
+                      </div>
+                    </div>
+                    <hr>
+  
+                    <div class="d-flex p-2">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Founder Name</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{hospital_data[0]?.founderName || 'NA'}}
+                      </div>
+                    </div>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Key Features Section -->
+          <div class="card-body">
+            <div class="card mt-3">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong> Key Features </strong></li>
+                <li class="list-group-item">
+                  <i class="bi bi-hand-thumbs-up"></i>{{hospital_data[0]?.hospitalType || 'NA'}} Hospital
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-hand-thumbs-up"></i>{{hospital_data[0]?.hospitalOwnershipType || 'NA'}} Ownership Type
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-hand-thumbs-up"></i>Emergency Contact {{hospital_data[0]?.hospitalPhoneNumber || 'NA'}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  

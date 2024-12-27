@@ -1,0 +1,25 @@
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .list-group-item i {
+    margin-right: 8px;
+    color: #007bff;
+  }
+  
+  .progress-bar {
+    background-color: #31f1de;
+  }
+  
+  .card {
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #134f98;
+    box-shadow: 0 5px 15px rgba(19, 79, 152, 0.4);
+    transition: all 0.3s ease;
+  
+  
+  
+  }

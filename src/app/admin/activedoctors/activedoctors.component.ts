@@ -35,7 +35,7 @@ export class ActivedoctorsComponent {
 
   viewProfile(id: string): void {
     this.sharedservice.setDoctorId(id);
-   this.router.navigate(['/doctor/profileadmin']);
+   this.router.navigate(['/admin/doctorprofile']);
   }
 
   updateDetails(id: string): void {

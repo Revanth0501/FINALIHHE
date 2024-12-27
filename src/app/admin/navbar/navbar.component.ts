@@ -1,9 +1,9 @@
 import { Component, HostListener } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
