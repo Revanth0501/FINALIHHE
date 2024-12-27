@@ -29,7 +29,7 @@ export class RejectedappointmentsComponent {
           (appointment: { status: string }) =>
             appointment.status?.trim().toLowerCase() === 'rejected'
         );
-        this.rejected_appointments.sort((a:any, b:any) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime())
+        this.rejected_appointments.sort((a:any, b:any) => new Date(b.appointmentDate).getTime() - new Date(a.appointmentDate).getTime())
         console.log("Rejected Appointments : ",this.rejected_appointments);
       },
       error: (err) => {

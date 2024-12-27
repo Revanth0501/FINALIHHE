@@ -8,6 +8,7 @@
     <thead class="thead-dark">
             <tr>
                 <th>S No.</th>
+                <th>Patient Name</th>
                 <th>Doctor Name</th>
                 <th>Appointment Date</th>
                 <th>Time</th>
@@ -19,7 +20,8 @@
     <tbody>
         <tr *ngFor="let appointment of rejectedAppointments; let i = index">
             <td>{{ i + 1 }}</td>
-            <td>{{ appointment.doctor }}</td>
+            <td>{{appointment.patientName}}</td>
+            <td>{{ appointment.doctorName }}</td>
             <td>{{ appointment.appointmentDate | date: 'dd-MM-yyyy' }}</td>
            
             

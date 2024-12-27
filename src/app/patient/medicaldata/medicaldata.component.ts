@@ -26,8 +26,9 @@ export class MedicaldataComponent {
     const apiUrl = `https://localhost:7287/api/Patient/AppointmentsData?patientId=${this.patientId}`;  
     this.http.get<any[]>(apiUrl).subscribe({
       next: (response) => {
-        this.appointmentDetails = response;  
-        console.log('Appointment Details:', this.appointmentDetails);
+        this.appointmentDetails = response;
+        this.appointmentDetails.sort((a:any, b:any) => new Date(b.appointmentDate).getTime() - new Date(a.appointmentDate).getTime());
+        console.log('Sorted Appointment Details:', this.appointmentDetails);
       },
       error: (err) => {
         console.error('Error fetching appointment details', err);
@@ -35,5 +36,6 @@ export class MedicaldataComponent {
       }
     });
   }
+  
 }
 

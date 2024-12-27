@@ -1,1 +1,33 @@
-<p>pendingtickets works!</p>
+<h2 class="text-center" style="font-size:40px;">Pending Ticket's</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <table *ngIf="ticketIsuues.length > 0" id="example" class="display nowrap table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>S No.</th>
+            <th>Ticket ID</th>
+            <th>User Email</th>
+            <th>User Type</th>
+            <th>Issue</th>
+            <th>Update Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticket of ticketIsuues; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ ticket?.ticketId }}</td>
+            <td>{{ ticket?.userEmail }}</td>
+            <td>{{ ticket?.userType }}</td>
+            <td>{{ ticket?.issue }}</td>
+            <td>
+              <button class="btn btn-success" *ngIf="ticket?.ticketId" (click)="Solved(ticket.ticketId)">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p *ngIf="ticketIsuues.length === 0">No pending tickets available.</p>
+    </div>
+  </div>
+</div>

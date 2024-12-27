@@ -7,6 +7,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { ContactusComponent } from './contactus/contactus.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { PatientmedicaldataComponent } from './patientmedicaldata/patientmedicaldata.component';
+import { UpdateappointmentdataComponent } from './updateappointmentdata/updateappointmentdata.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path:'patientmedicaldata/:id',
         component:PatientmedicaldataComponent
+      },
+      {
+        path:'updateappointment/:id',
+        component:UpdateappointmentdataComponent
       }
 
     ]

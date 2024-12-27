@@ -1,1 +1,31 @@
-<p>solvedtickets works!</p>
+<h2 class="text-center" style="font-size:40px;">Solved Tickets</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <table id="example" class="display nowrap table table-bordered table-hover ">
+        <thead>
+          <tr >
+            <th>Ticket ID</th>
+            <th>User Email</th>
+            <th>User Type</th>
+            <th>Issue</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let j of solvedTickets; let i = index">
+                <td>{{ solvedTickets[i]?.ticketId }}</td>
+                <td>{{ solvedTickets[i]?.userEmail }}</td>
+                <td>{{ solvedTickets[i]?.userType }}</td>
+                <td>{{solvedTickets[i]?.issue}}</td>
+                 
+                  
+                  
+              </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p style="display:none">{{solvedTickets[0]?.ticketId}}</p> 

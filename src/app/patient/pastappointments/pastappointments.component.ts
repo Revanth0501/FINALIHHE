@@ -31,7 +31,7 @@ export class PastappointmentsComponent {
             appointment.status ?.trim().toLowerCase() === "approved" && 
           new Date(appointment.appointmentDate) <=new Date()
         )
-        this.past_appointments.sort((a:any, b:any) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime());
+        this.past_appointments.sort((a:any, b:any) => new Date(b.appointmentDate).getTime() - new Date(a.appointmentDate).getTime());
         console.log("Pending Appointments : ",this.past_appointments);
       },
       error: (err) => {

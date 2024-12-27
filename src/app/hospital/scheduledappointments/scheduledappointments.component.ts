@@ -29,7 +29,7 @@ export class ScheduledappointmentsComponent {
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log(response);
-        this.scheduledAppointments = response.filter(appointment => appointment.status === "Approved");
+        this.scheduledAppointments = response.filter(appointment => appointment.appointmentStatus === "Approved" && new Date(appointment.appointmentDate) >= new Date() );
         console.log(this.scheduledAppointments);
       },
       (error) =>
@@ -37,9 +37,5 @@ export class ScheduledappointmentsComponent {
         console.error(error.message);
       }
     )
-  }
-
-  Update_Data(id: number): void {
-    this.router.navigate(['/hospital/updateappointmentdata', id]);
   }
 }

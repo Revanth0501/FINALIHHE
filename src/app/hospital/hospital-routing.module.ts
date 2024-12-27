@@ -9,7 +9,6 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { PendingappointmentsComponent } from './pendingappointments/pendingappointments.component';
 import { ScheduledappointmentsComponent } from './scheduledappointments/scheduledappointments.component';
 import { RejectedappointmentsComponent } from './rejectedappointments/rejectedappointments.component';
-import { AppointmentdataComponent } from './appointmentdata/appointmentdata.component';
 
 const routes: Routes = [
   {
@@ -51,10 +50,6 @@ const routes: Routes = [
       {
         path:'rejectedappointments',
         component:RejectedappointmentsComponent
-      },
-      {
-        path:'updateappointmentdata/:id',
-        component:AppointmentdataComponent
       }
     ]
   },
@@ -65,10 +60,6 @@ const routes: Routes = [
   {
     path:"updateprofileadmin",
     component:UpdateprofileComponent
-  },
-  {
-    path:"updateappointmentdata/:id",
-    component:AppointmentdataComponent
   }
 ];
 

@@ -29,7 +29,7 @@ export class PendingappointmentsComponent {
           (appointment: { status: string }) =>
             appointment.status?.trim().toLowerCase() === 'pending'
         );
-        this.pending_appointments.sort((a:any, b:any) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime())
+        this.pending_appointments.sort((a:any, b:any) => new Date(b.appointmentDate).getTime() - new Date(a.appointmentDate).getTime())
 
         console.log("Pending Appointments : ",this.pending_appointments)
       },

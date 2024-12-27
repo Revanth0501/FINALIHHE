@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -5,13 +6,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-appointmentdata',
-  imports: [ReactiveFormsModule],
-  templateUrl: './appointmentdata.component.html',
-  styleUrl: './appointmentdata.component.css'
+  selector: 'app-updateappointmentdata',
+  imports: [ReactiveFormsModule,CommonModule],
+  templateUrl: './updateappointmentdata.component.html',
+  styleUrl: './updateappointmentdata.component.css'
 })
-export class AppointmentdataComponent {
-  appointmentForm!: FormGroup;
+export class UpdateappointmentdataComponent {
+ appointmentForm!: FormGroup;
   appointmentId: string='';
   http=inject(HttpClient);
   router=inject(Router);

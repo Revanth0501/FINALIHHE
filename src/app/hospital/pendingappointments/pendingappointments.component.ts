@@ -30,7 +30,7 @@ export class PendingappointmentsComponent {
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log(response);
-        this.pendingAppointments = response.filter(appointment => appointment.status === "Pending");
+        this.pendingAppointments = response.filter(appointment => appointment.appointmentStatus === "Pending");
         console.log(this.pendingAppointments);
       },
       (error) => {

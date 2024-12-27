@@ -29,7 +29,7 @@ export class RejectedappointmentsComponent {
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log(response);
-        this.rejectedAppointments = response.filter(appointment => appointment.status === "Rejected");
+        this.rejectedAppointments = response.filter(appointment => appointment.appointmentStatus === "Rejected");
         console.log(this.rejectedAppointments);
       },
       (error) =>

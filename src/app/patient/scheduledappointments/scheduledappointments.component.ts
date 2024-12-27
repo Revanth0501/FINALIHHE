@@ -24,12 +24,13 @@ export class ScheduledappointmentsComponent {
     const apiUrl = `https://localhost:7287/api/Patient/AppointmentsFetch?PatientId=${this.patientId}`;
     this.http.get<any[]>(apiUrl).subscribe({
       next: (response) => {
+        console.log(response);
         this.scheduled_appointments = response.filter(
           (appointment: { status: string; appointmentDate: string }) =>
             appointment.status?.trim().toLowerCase() === "approved" &&
             new Date(appointment.appointmentDate) >= new Date()
         );
-        this.scheduled_appointments.sort((a:any, b:any) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime());
+        this.scheduled_appointments.sort((a:any, b:any) => new Date(b.appointmentDate).getTime() - new Date(a.appointmentDate).getTime());
         console.log("Scheduled Appointments : ",this.scheduled_appointments);
       },
       error: (err) => {

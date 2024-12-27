@@ -8,25 +8,21 @@
 
         <tr>
             <th>S No.</th>
+            <th>Patient Name</th>
             <th>Doctor Name</th>
             <th>Appointment Date</th>
             <th>Time</th>
             <th>Note</th>
-            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let appointment of scheduledAppointments; let i = index">
             <td>{{ i + 1 }}</td>
-            <td>{{ appointment.doctor }}</td>
+            <td>{{appointment.patientName}}</td>
+            <td>{{ appointment.doctorName }}</td>
             <td>{{ appointment.appointmentDate | date: 'dd-MM-yyyy' }}</td>
             <td>{{ appointment.appointmentTime }}</td>
             <td>{{ appointment.appointmentNote }}</td>
-            <td>
-                <button class="btn btn-primary" (click)="Update_Data(appointment.appointmentId)">
-                    Update
-                </button>
-            </td>
         </tr>
     </tbody>
 </table>

@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppointmentsComponent {
   todaysAppointments:any=[]
+  scheduledAppointments:any=[]
   doctorId: string = "";
 
   http=inject(HttpClient);
@@ -24,18 +25,30 @@ export class AppointmentsComponent {
     this.getAppointmentsData();
   }
 
-  getAppointmentsData():void
-  {
-    const apiUrl=`https://localhost:7287/api/Doctor/doctorappointments?doctorId=${this.doctorId}`;
-    this.http.get(apiUrl).subscribe((data:any)=>{
-      this.todaysAppointments=data;
+  getAppointmentsData(): void {
+    const apiUrl = `https://localhost:7287/api/Doctor/doctorappointments?doctorId=${this.doctorId}`;
+    this.http.get(apiUrl).subscribe((data: any) => {
+      console.log(data);
+      const today = new Date().toISOString().split('T')[0];
+      this.todaysAppointments = data.filter((appointment: any) => {
+        return appointment.appointmentDate === today;
+      });
+      this.scheduledAppointments = data.filter((appointment: any) => {
+        return appointment.appointmentDate > today;
+      });
       console.log(this.todaysAppointments);
+    }, (error) => {
+      console.error('Error fetching appointments:', error);
     });
-    
   }
-
+  
   onView(id: number): void {
     this.router.navigate(['/doctor/patientmedicaldata', id]);
+  }
+
+  updateAppointment(id : string)
+  {
+    this.router.navigate(['/doctor/updateappointment',id])
   }
   
 }
