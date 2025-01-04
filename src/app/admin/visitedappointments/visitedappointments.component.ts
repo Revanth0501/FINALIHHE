@@ -20,7 +20,7 @@ export class VisitedappointmentsComponent {
 
   getAppointments():void
   {
-    const apiUrl="https://localhost:7287/api/Admin/AppointmentsFetch"
+    const apiUrl="http://43.205.181.183:5000/api/Admin/AppointmentsFetch"
     this.http.get<any []>(apiUrl).subscribe(
       (response) => 
       {

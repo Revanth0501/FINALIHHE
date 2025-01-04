@@ -81,7 +81,7 @@ export class NavbarComponent {
         denyButtonText: "No"
       }).then((result) => {
         if (result.isConfirmed) {
-          const api = `https://localhost:7287/api/Doctor/DeleteAccount?Id=${this.doctor_id}`;
+          const api = `http://43.205.181.183:5000/api/Doctor/DeleteAccount?Id=${this.doctor_id}`;
   
           this.http.delete(api).subscribe(
             (response: any) => {
@@ -91,7 +91,7 @@ export class NavbarComponent {
                 title: "Account successfully deactivated",
                 showConfirmButton: false,
                 timer: 1500
-              }).then( () => { this.route.navigate(['/home/login']); });
+              }).then( () => { this.route.navigate(['home']); });
              
             },
             (error: any) => {

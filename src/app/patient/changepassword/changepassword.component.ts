@@ -33,7 +33,7 @@ export class ChangepasswordComponent {
   }
 
   updatePasswordForm = new FormGroup({
-    oldPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    oldPassword: new FormControl('', [Validators.required]),
     newPassword: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
@@ -63,7 +63,7 @@ export class ChangepasswordComponent {
     }
 
     this.patientId=this.sharedservice.getPatientId();
-    const apiUrl = `https://localhost:7287/api/Patient/UpdatePassword?PatientId=${this.patientId}&currentPassword=${oldPassword}&newPassword=${newPassword}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/UpdatePassword?PatientId=${this.patientId}&currentPassword=${oldPassword}&newPassword=${newPassword}`;
     console.log(apiUrl);
     this.http.put<any>(apiUrl, {}).subscribe({
       next: (response) => {

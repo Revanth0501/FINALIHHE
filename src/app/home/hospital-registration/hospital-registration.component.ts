@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 })
 export class HospitalRegistrationComponent implements OnInit {
   hospital_Registration: FormGroup;
-
+  today: string = new Date().toISOString().split('T')[0];
+  
   constructor(private fb: FormBuilder, private http: HttpClient,private router:Router) {
     this.hospital_Registration = this.fb.group({
       hospitalName: ['', Validators.required],
@@ -48,7 +49,7 @@ export class HospitalRegistrationComponent implements OnInit {
         hospitalOwnershipType: this.hospital_Registration.value.hospitalOwnershipType
       };
 
-      this.http.post('https://localhost:7287/api/Home/HospitalRegistration', hospitalData)
+      this.http.post('http://43.205.181.183:5000/api/Home/HospitalRegistration', hospitalData)
         .subscribe(
           response => {
             console.log('Hospital registered successfully:', response);
@@ -72,5 +73,11 @@ export class HospitalRegistrationComponent implements OnInit {
         );
     
     }
+  }
+
+  
+  redirectToSignIn()
+  {
+    this.router.navigate(['/home/login'])
   }
 }

@@ -46,7 +46,7 @@ export class LoginComponent {
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
 
-    const apiUrl=`https://localhost:7287/api/Home/UserAuthentication?usertype=${userrole}&username=${username}&password=${password}`
+    const apiUrl=`http://43.205.181.183:5000/api/Home/UserAuthentication?usertype=${userrole}&username=${username}&password=${password}`
     this.http.get(apiUrl).subscribe({
       next: (response: any) => {
         console.log("Login Successful", response);
@@ -93,7 +93,6 @@ export class LoginComponent {
     });
     
   }
-
 
 
 }

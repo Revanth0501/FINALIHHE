@@ -12,7 +12,7 @@ import { SharedService } from '../../shared.service';
 })
 export class ProfileComponent {
   hospital_data: any = null;
-  hospital_id: string = 'C6D478FF-16A6-4081-6B2F-08DD20D3F015'; // Example hospital ID
+  hospital_id: string = ''; // Example hospital ID
   encodedImage?: string | null = null; // Holds the base64 encoded image data
 
   constructor(private http: HttpClient, private fb: FormBuilder,private sharedservice:SharedService) {
@@ -25,7 +25,7 @@ export class ProfileComponent {
 
   // Fetch hospital profile data from the backend API
   getHospital_profile(): void {
-    const apiUrl = `https://localhost:7287/api/Hospital/HospitalProfile?HospitalId=${this.hospital_id}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Hospital/HospitalProfile?HospitalId=${this.hospital_id}`;
     this.http.get<any>(apiUrl).subscribe(
       (data: any) => {
         this.hospital_data = data;

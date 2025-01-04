@@ -38,7 +38,7 @@ export class ProfileComponent {
 
  
   getRecentMedicalData(): void {
-    const apiUrl = `https://localhost:7287/api/Patient/AppointmentsData?patientId=${this.patientId}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/AppointmentsData?patientId=${this.patientId}`;
     this.http.get<any[]>(apiUrl).subscribe({
       next: (response) => {
         this.medical_data = response; 
@@ -59,7 +59,7 @@ export class ProfileComponent {
 
   
   getPersonalInformation(): void {
-    const apiUrl = `https://localhost:7287/api/Patient/PersonalInformation?PatientId=${this.patientId}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/PersonalInformation?PatientId=${this.patientId}`;
     this.http.get<any[]>(apiUrl).subscribe({
       next: (response) => {
         this.personal_data = response[0];

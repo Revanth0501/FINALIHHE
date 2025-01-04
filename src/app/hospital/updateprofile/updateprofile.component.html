@@ -34,10 +34,10 @@
                     </div>
 
                     <div class="input-box">
-                        <label class="details" for="avilableFacilities" style="font-weight:600;">Available Facilities</label>
-                        <input type="text" id="avilableFacilities" name="avilableFacilities" formControlName="avilableFacilities" placeholder="Enter your Available Facilities">
+                        <label class="details" for="availableFacilities" style="font-weight:600;">Available Facilities</label>
+                        <input type="text" id="availableFacilities" name="availableFacilities" formControlName="availableFacilities" placeholder="Enter your Available Facilities">
                         <small class="error"  
-                        *ngIf="Update_Hospital_Profile.get('avilableFacilities')?.touched && Update_Hospital_Profile.get('avilableFacilities')?.invalid">
+                        *ngIf="Update_Hospital_Profile.get('availableFacilities')?.touched && Update_Hospital_Profile.get('availableFacilities')?.invalid">
                             *Hospital facilities are required. 
                           </small>
                     </div>
@@ -48,7 +48,7 @@
                             <option [disabled]="true"><span>Select hospital type</span></option>
                             <option value="General"><span>General</span></option>
                             <option value="Specialty"><span>Specialty</span></option>
-                            <option value="Multi-specialty"><span>Multi-specialty</span></option>
+                            <option value="Multispeciality"><span>Multi-Specialty</span></option>
                         </select>
                         <small class="error"  
                         *ngIf="Update_Hospital_Profile.get('hospitalType')?.touched && Update_Hospital_Profile.get('hospitalType')?.invalid">

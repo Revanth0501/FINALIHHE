@@ -41,7 +41,7 @@ export class MainPageComponent {
       return;
     }
     const formData = this.contactForm.value;
-    this.http.post('https://localhost:7195/api/Hospital_Contoller/RegistrationIssue', formData)
+    this.http.post('http://43.205.181.183:5000//api/Hospital_Contoller/RegistrationIssue', formData)
       .subscribe(
         (response: any) => {
           Swal.fire({

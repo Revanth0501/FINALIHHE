@@ -19,7 +19,7 @@ export class InactivehospitalsComponent {
    }
  
    getHospitalsList(): void {
-     const apiUrl = "https://localhost:7287/api/Admin/HospitalList";
+     const apiUrl = "http://43.205.181.183:5000/api/Admin/HospitalList";
      this.http.get<any[]>(apiUrl).subscribe(
        (response) => {
          console.log("Hospitals List inactive: ", response);
@@ -43,7 +43,7 @@ export class InactivehospitalsComponent {
  
    
  updateStatus(id: string): void {
-     const apiUrl = `https://localhost:7287/api/Admin/UpdateAccountStatus?usertype=Hospital&Id=${id}`;
+     const apiUrl = `http://43.205.181.183:5000/api/Admin/UpdateAccountStatus?usertype=Hospital&Id=${id}`;
    
      Swal.fire({
        title: "Are you sure?",
@@ -65,7 +65,7 @@ export class InactivehospitalsComponent {
                showConfirmButton: false,
                timer: 1500,
              });
-             window.location.reload();
+            this.getHospitalsList();
            },
            (error) => {
              console.error("Error: ", error.message);

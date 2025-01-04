@@ -21,7 +21,7 @@ export class InactivepatientsComponent {
   }
 
   getPatientsList(): void {
-    const apiUrl = "https://localhost:7287/api/Admin/PatientsList";
+    const apiUrl = "http://43.205.181.183:5000/api/Admin/PatientsList";
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log("Patients List: ", response);
@@ -43,7 +43,7 @@ export class InactivepatientsComponent {
 
 
   updateStatus(id: number): void {
-    const apiUrl = `https://localhost:7287/api/Admin/UpdateAccountStatus?usertype=Patient&PatientId=${id}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Admin/UpdateAccountStatus?usertype=Patient&PatientId=${id}`;
   
     Swal.fire({
       title: "Are you sure?",
@@ -65,7 +65,7 @@ export class InactivepatientsComponent {
               showConfirmButton: false,
               timer: 1500,
             });
-            window.location.reload();
+           this.getPatientsList();
           },
           (error) => {
             console.error("Error: ", error.message);

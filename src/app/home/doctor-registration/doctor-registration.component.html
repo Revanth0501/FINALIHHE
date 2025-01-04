@@ -47,5 +47,22 @@
     </div>
 
     <button type="submit" [disabled]="doctorForm.invalid">Register</button>
+
+    <small class="text-center"style="
+    display: inline-block; 
+    margin-top: 15px; 
+    font-size: 14px; 
+    color: black;">
+    Already have an account? 
+    <a style="
+      color: #007BFF; 
+      font-weight: bold; 
+      text-decoration: underline; 
+      cursor: pointer;" 
+      (click)="redirectToSignIn()">
+      Sign In
+    </a>
+  </small>
+
   </form>
 </div>

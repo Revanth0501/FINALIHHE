@@ -37,7 +37,7 @@ export class ContactusComponent {
     if (this.Contactform.valid) {
       const Contactformdata = this.Contactform.value; 
 
-      this.http.post('https://localhost:7287/api/Admin/RaiseTicket', Contactformdata).subscribe(
+      this.http.post('http://43.205.181.183:5000/api/Admin/RaiseTicket', Contactformdata).subscribe(
         (data: any) => {
           Swal.fire({
             position: 'center',
@@ -73,7 +73,7 @@ export class ContactusComponent {
   }
 
   GetPatientData(): void {
-    const api = `https://localhost:7287/api/Patient/PersonalInformation?PatientId=${this.patientId}`;
+    const api = `http://43.205.181.183:5000/api/Patient/PersonalInformation?PatientId=${this.patientId}`;
   
     this.http.get(api).subscribe({
       next: (data: any) => {

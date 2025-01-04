@@ -21,7 +21,7 @@ export class ActivepatientsComponent {
   }
 
   getPatientsList(): void {
-    const apiUrl = "https://localhost:7287/api/Admin/PatientsList";
+    const apiUrl = "http://43.205.181.183:5000/api/Admin/PatientsList";
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log("Patients List: ", response);
@@ -40,39 +40,39 @@ export class ActivepatientsComponent {
    this.router.navigate(['/admin/patientprofile']);
   }
 
-  updateDetails(id: number): void {
-    this.sharedservice.setPatientId(id);
-   this.router.navigate(['/patient/updateprofileadmin'])
-  }
+  // updateDetails(id: number): void {
+  //   this.sharedservice.setPatientId(id);
+  //  this.router.navigate(['/patient/updateprofileadmin'])
+  // }
 
-  viewPassword(id: number): void {
-    const apiUrl = `https://localhost:7287/api/Admin/GetPassword?usertype=Patient&PatientId=${id}`;
+  // viewPassword(id: number): void {
+  //   const apiUrl = `/api/Admin/GetPassword?usertype=Patient&PatientId=${id}`;
   
-    this.http.get(apiUrl, { responseType: 'text' }).subscribe(
-      (response: string) => {
-        if (response) {
-          Swal.fire({
-            title: 'Password Retrieved',
-            text: `Password: ${response}`,
-            icon: 'info',
-          });
-        } else {
-          Swal.fire({
-            title: 'No Password Found',
-            text: 'No password is associated with the provided ID.',
-            icon: 'warning',
-          });
-        }
-      },
-      (error) => {
-        Swal.fire({
-          title: 'Error',
-          text: 'Failed to retrieve password. Please try again.',
-          icon: 'error',
-        });
-      }
-    );
-  }
+  //   this.http.get(apiUrl, { responseType: 'text' }).subscribe(
+  //     (response: string) => {
+  //       if (response) {
+  //         Swal.fire({
+  //           title: 'Password Retrieved',
+  //           text: `Password: ${response}`,
+  //           icon: 'info',
+  //         });
+  //       } else {
+  //         Swal.fire({
+  //           title: 'No Password Found',
+  //           text: 'No password is associated with the provided ID.',
+  //           icon: 'warning',
+  //         });
+  //       }
+  //     },
+  //     (error) => {
+  //       Swal.fire({
+  //         title: 'Error',
+  //         text: 'Failed to retrieve password. Please try again.',
+  //         icon: 'error',
+  //       });
+  //     }
+  //   );
+  // }
   
 
   deletePatient(id: number): void {
@@ -87,24 +87,24 @@ export class ActivepatientsComponent {
       cancelButtonText: 'No, cancel!',
     }).then((result) => {
       if (result.isConfirmed) {
-        const apiUrl = `https://localhost:7287/api/Patient/DeletePatient?PatientId=${id}`;
+        const apiUrl = `http://43.205.181.183:5000/api/Patient/DeletePatient?PatientId=${id}`;
         this.http.delete<any>(apiUrl).subscribe({
           next: (response) => {
             Swal.fire({
-              title: 'Deleted!',
-              text: response.message,
+              title: 'Deactivated!',
+              text: "Account Deactivated Successfully",
               icon: 'success',
               confirmButtonText: 'OK',
               timer:2000
             }).then(() => {
-              window.location.reload();
+              this.getPatientsList();
             });
           },
           error: (err) => {
-            console.error('Error deleting the account', err);
+            console.error('Error deactivating the account', err);
             Swal.fire({
               title: 'Error!',
-              text: 'Failed to delete the account. Please try again later.',
+              text: 'Failed to deactivate the account. Please try again later.',
               icon: 'error',
               confirmButtonText: 'OK',
             });
@@ -113,7 +113,7 @@ export class ActivepatientsComponent {
       } else {
         Swal.fire({
           title: 'Cancelled',
-          text: 'Account deletion was cancelled.',
+          text: 'Account Deactivation was cancelled.',
           icon: 'info',
           confirmButtonText: 'OK',
         });

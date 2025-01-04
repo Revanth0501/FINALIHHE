@@ -90,30 +90,30 @@ export class NavbarComponent {
     this.router.navigate(['profile']);
     Swal.fire({
       title: 'Are you sure?',
-      text: 'Do you really want to delete your account?',
+      text: 'Do you really want to deactivate your account?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Yes, deactivate it!',
       cancelButtonText: 'No, cancel!',
     }).then((result) => {
       if (result.isConfirmed) {
-        const apiUrl = `https://localhost:7287/api/Patient/DeletePatient?PatientId=${this.patientId}`;
+        const apiUrl = `http://43.205.181.183:5000/api/Patient/DeletePatient?PatientId=${this.patientId}`;
         this.http.delete<any>(apiUrl).subscribe({
           next: (response) => {
             Swal.fire({
-              title: 'Deleted!',
-              text: response.message,
+              title: 'Deactivated!',
+              text: 'Account Deactivated Successfully',
               icon: 'success',
               confirmButtonText: 'OK',
-            });
+            }).then( () =>  this.router.navigate(['home']));
           },
           error: (err) => {
-            console.error('Error deleting the account', err);
+            console.error('Error deactivating the account', err);
             Swal.fire({
               title: 'Error!',
-              text: 'Failed to delete the account. Please try again later.',
+              text: 'Failed to deactivate the account. Please try again later.',
               icon: 'error',
               confirmButtonText: 'OK',
             });
@@ -122,7 +122,7 @@ export class NavbarComponent {
       } else {
         Swal.fire({
           title: 'Cancelled',
-          text: 'Account deletion was cancelled.',
+          text: 'Account Deactivate cancelled.',
           icon: 'info',
           confirmButtonText: 'OK',
         });

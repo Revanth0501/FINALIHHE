@@ -23,7 +23,7 @@ export class PatientmedicaldataComponent {
   getAppointmentDetails(): void {
     this.patientIdParam = this.route.snapshot.paramMap.get('id');
     console.log('Received patient_id from route:',this.patientIdParam); 
-    const apiUrl = `https://localhost:7287/api/Patient/AppointmentsData?patientId=${this.patientIdParam}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/AppointmentsData?patientId=${this.patientIdParam}`;
     console.log('API URL:', apiUrl); 
 
     

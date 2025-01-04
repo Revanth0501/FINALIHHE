@@ -26,7 +26,7 @@ export class PendingappointmentsComponent {
   }
 
   getAppointments() {
-    const apiUrl = `https://localhost:7287/api/Hospital/Appointments?HospitalId=${this.hospitalId}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Hospital/Appointments?HospitalId=${this.hospitalId}`;
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log(response);
@@ -49,7 +49,7 @@ export class PendingappointmentsComponent {
     }).then((result) => {
 
       if (result.isConfirmed) {
-        this.http.put(`https://localhost:7287/api/Hospital/AppointmentsApproval`, null, {
+        this.http.put(`http://43.205.181.183:5000/api/Hospital/AppointmentsApproval`, null, {
           params: {
             AppointmentId: id,
             status: 'Approved',
@@ -99,7 +99,7 @@ export class PendingappointmentsComponent {
 
       if (result.isConfirmed) {
         this.http
-          .put(`https://localhost:7287/api/Hospital/AppointmentsApproval`, null, {
+          .put(`http://43.205.181.183:5000/api/Hospital/AppointmentsApproval`, null, {
             params: {
               AppointmentId: id,
               status: 'Rejected',

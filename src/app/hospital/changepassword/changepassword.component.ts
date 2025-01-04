@@ -75,7 +75,7 @@ export class ChangepasswordComponent {
       return;
     }
 
-    const apiUrl=`https://localhost:7287/api/Hospital/UpdatePassword?HospitalId=${this.hospitalId}&currentPassword=${oldPassword}&newPassword=${newPassword}`
+    const apiUrl=`http://43.205.181.183:5000/api/Hospital/UpdatePassword?HospitalId=${this.hospitalId}&currentPassword=${oldPassword}&newPassword=${newPassword}`
     this.http.put<any>(apiUrl, {}).subscribe({
       next: () => {
         Swal.fire({

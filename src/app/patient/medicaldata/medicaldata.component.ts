@@ -23,7 +23,7 @@ export class MedicaldataComponent {
 
 
   getAppointmentDetails(): void {
-    const apiUrl = `https://localhost:7287/api/Patient/AppointmentsData?patientId=${this.patientId}`;  
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/AppointmentsData?patientId=${this.patientId}`;  
     this.http.get<any[]>(apiUrl).subscribe({
       next: (response) => {
         this.appointmentDetails = response;

@@ -32,34 +32,34 @@ export class PatientprofileComponent {
   }
 
   ngOnInit(): void {
-    this.getRecentMedicalData();
+    // this.getRecentMedicalData();
     this.getPersonalInformation();
   }
 
  
-  getRecentMedicalData(): void {
-    const apiUrl = `https://localhost:7287/api/Patient/AppointmentsData?patientId=${this.patientId}`;
-    this.http.get<any[]>(apiUrl).subscribe({
-      next: (response) => {
-        this.medical_data = response; 
-        console.log("Medical Details: ", this.medical_data);
-        this.latest_medical_data = this.medical_data.sort((a, b) => 
-          new Date(b.appointmentDate).getTime() - new Date(a.appointmentDate).getTime()
-        )[0];
-        console.log("Latest Medical Details: ", this.latest_medical_data);
-        this.calculateDiagnosisPercentage();
-        this.cdr.detectChanges(); 
-      },
-      error: (err) => {
-        console.error('Error fetching medical details', err);
-        alert('Failed to load medical details. Please try again later.');
-      }
-    });
-  }
+  // getRecentMedicalData(): void {
+  //   const apiUrl = `https://localhost:7287/api/Patient/AppointmentsData?patientId=${this.patientId}`;
+  //   this.http.get<any[]>(apiUrl).subscribe({
+  //     next: (response) => {
+  //       this.medical_data = response; 
+  //       console.log("Medical Details: ", this.medical_data);
+  //       this.latest_medical_data = this.medical_data.sort((a, b) => 
+  //         new Date(b.appointmentDate).getTime() - new Date(a.appointmentDate).getTime()
+  //       )[0];
+  //       console.log("Latest Medical Details: ", this.latest_medical_data);
+  //       this.calculateDiagnosisPercentage();
+  //       this.cdr.detectChanges(); 
+  //     },
+  //     error: (err) => {
+  //       console.error('Error fetching medical details', err);
+  //       alert('Failed to load medical details. Please try again later.');
+  //     }
+  //   });
+  // }
 
   
   getPersonalInformation(): void {
-    const apiUrl = `https://localhost:7287/api/Patient/PersonalInformation?PatientId=${this.patientId}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/PersonalInformation?PatientId=${this.patientId}`;
     this.http.get<any[]>(apiUrl).subscribe({
       next: (response) => {
         this.personal_data = response[0];
@@ -74,39 +74,39 @@ export class PatientprofileComponent {
   }
 
 
-calculateDiagnosisPercentage(): void {
-  const diagnosisCount: Record<string, number> = this.medical_data.reduce(
-    (acc: Record<string, number>, curr: any) => {
-      console.log('Diagnosis value:', curr.diagonsis); 
-      acc[curr.diagonsis] = (acc[curr.diagonsis] || 0) + 1;
-      return acc;
-    },
-    {}
-  );
+// calculateDiagnosisPercentage(): void {
+//   const diagnosisCount: Record<string, number> = this.medical_data.reduce(
+//     (acc: Record<string, number>, curr: any) => {
+//       console.log('Diagnosis value:', curr.diagonsis); 
+//       acc[curr.diagonsis] = (acc[curr.diagonsis] || 0) + 1;
+//       return acc;
+//     },
+//     {}
+//   );
 
-  const totalAppointments: number = this.medical_data.length;
-  const diagnosisLabels = Object.keys(diagnosisCount); 
-  const diagnosisPercentages = Object.values(diagnosisCount).map(
-    (count: number) => (count / totalAppointments) * 100  
-  );
-  console.log("Labels:", diagnosisLabels);
+//   const totalAppointments: number = this.medical_data.length;
+//   const diagnosisLabels = Object.keys(diagnosisCount); 
+//   const diagnosisPercentages = Object.values(diagnosisCount).map(
+//     (count: number) => (count / totalAppointments) * 100  
+//   );
+//   console.log("Labels:", diagnosisLabels);
   
-  this.chartOptions = {
-    data: diagnosisPercentages.map((percentage, index) => ({
-      label: diagnosisLabels[index],
-      value: percentage
-    })),
-    series: [
-      {
-        type: 'donut',
-        calloutLabelKey: 'label',
-        angleKey: 'value',
-        innerRadiusRatio: 0.7,
-      } as any,
-    ],
-  };
+//   this.chartOptions = {
+//     data: diagnosisPercentages.map((percentage, index) => ({
+//       label: diagnosisLabels[index],
+//       value: percentage
+//     })),
+//     series: [
+//       {
+//         type: 'donut',
+//         calloutLabelKey: 'label',
+//         angleKey: 'value',
+//         innerRadiusRatio: 0.7,
+//       } as any,
+//     ],
+//   };
 
-  console.log('Diagnosis Percentage Data: ', this.chartOptions);
-}
+//   console.log('Diagnosis Percentage Data: ', this.chartOptions);
+// }
 
 }

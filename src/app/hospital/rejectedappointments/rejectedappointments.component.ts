@@ -25,7 +25,7 @@ export class RejectedappointmentsComponent {
 
   getAppointments()
   {
-    const apiUrl=`https://localhost:7287/api/Hospital/Appointments?HospitalId=${this.hospitalId}`;
+    const apiUrl=`http://43.205.181.183:5000/api/Hospital/Appointments?HospitalId=${this.hospitalId}`;
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log(response);

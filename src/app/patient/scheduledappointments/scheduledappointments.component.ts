@@ -20,8 +20,8 @@ export class ScheduledappointmentsComponent {
     this.appointmentsFetch()
   }
   appointmentsFetch(): void {
-    console.log("Svhedule Patient : ",this.patientId);
-    const apiUrl = `https://localhost:7287/api/Patient/AppointmentsFetch?PatientId=${this.patientId}`;
+    console.log("Schedule Patient : ",this.patientId);
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/AppointmentsFetch?PatientId=${this.patientId}`;
     this.http.get<any[]>(apiUrl).subscribe({
       next: (response) => {
         console.log(response);

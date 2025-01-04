@@ -24,7 +24,7 @@ export class SolvedticketsComponent implements OnInit{
   router=inject(Router);
 
   GetIsuuesData():void{
-      this.http.get("https://localhost:7287/api/Admin/Tickets").subscribe((data:any)=>{
+      this.http.get("http://43.205.181.183:5000/api/Admin/Tickets").subscribe((data:any)=>{
         this.solvedTickets=data.filter((data:{ status:string})=>data.status==='Solved');
         console.log("Data",data);
         this.cd.detectChanges();

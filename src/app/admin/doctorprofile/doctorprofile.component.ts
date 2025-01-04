@@ -22,7 +22,7 @@ http = inject(HttpClient);
   }
 
   Get_Doctor_Data(): void {
-    const api = `https://localhost:7287/api/Doctor/DoctorProfile?Doctor_Id=${this.doctor_id}`;
+    const api = `http://43.205.181.183:5000/api/Doctor/DoctorProfile?Doctor_Id=${this.doctor_id}`;
     this.http.get<any[]>(api).subscribe(
       (data) => {
         console.log('Fetched data:', data);

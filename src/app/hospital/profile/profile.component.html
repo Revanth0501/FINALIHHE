@@ -97,13 +97,16 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><strong> Key Features </strong></li>
               <li class="list-group-item">
-                <i class="bi bi-hand-thumbs-up"></i>{{hospital_data[0]?.hospitalType || 'NA'}} Hospital
+                <i class="bi bi-hand-thumbs-up"></i> Hospital Type :{{hospital_data[0]?.hospitalType || 'NA'}} Hospital
               </li>
               <li class="list-group-item">
-                <i class="bi bi-hand-thumbs-up"></i>{{hospital_data[0]?.hospitalOwnershipType || 'NA'}} Ownership Type
+                <i class="bi bi-hand-thumbs-up"></i> Ownership : {{hospital_data[0]?.hospitalOwnershipType || 'NA'}} Ownership Type
               </li>
               <li class="list-group-item">
-                <i class="bi bi-hand-thumbs-up"></i>Emergency Contact {{hospital_data[0]?.hospitalPhoneNumber || 'NA'}}
+                <i class="bi bi-hand-thumbs-up"></i>Emergency Contact : {{hospital_data[0]?.hospitalPhoneNumber || 'NA'}}
+              </li>
+              <li class="list-group-item">
+                <i class="bi bi-hand-thumbs-up"></i>Facilities : {{hospital_data[0]?.availableFacilities || 'NA'}}
               </li>
             </ul>
           </div>

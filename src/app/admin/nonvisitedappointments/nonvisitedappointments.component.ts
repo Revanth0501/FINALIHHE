@@ -21,7 +21,7 @@ export class NonvisitedappointmentsComponent {
 
   getAppointments():void
   {
-    const apiUrl="https://localhost:7287/api/Admin/AppointmentsFetch"
+    const apiUrl="http://43.205.181.183:5000/api/Admin/AppointmentsFetch"
     this.http.get<any []>(apiUrl).subscribe(
       (response) => 
       {
@@ -61,7 +61,7 @@ export class NonvisitedappointmentsComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         const selectedStatus = result.value;
-        const apiUrl = `https://localhost:7287/api/Admin/ApointmentStatusModification?AppointmentId=${AppointmentId}&Status=${selectedStatus}`;
+        const apiUrl = `http://43.205.181.183:5000/api/Admin/ApointmentStatusModification?AppointmentId=${AppointmentId}&Status=${selectedStatus}`;
         console.log("Sending Update Request with status:", selectedStatus);
         this.http.put(apiUrl, {}).subscribe(
           (response) => {
@@ -72,7 +72,7 @@ export class NonvisitedappointmentsComponent {
               showConfirmButton: false,
               timer: 2000
             }).then(() => {
-              window.location.reload();
+              this.getAppointments();
             });
           },
           (error) => {

@@ -52,14 +52,6 @@ const routes: Routes = [
         component:RejectedappointmentsComponent
       }
     ]
-  },
-  {
-    path:"profileadmin",
-    component:ProfileComponent
-  },
-  {
-    path:"updateprofileadmin",
-    component:UpdateprofileComponent
   }
 ];
 

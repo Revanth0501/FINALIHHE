@@ -25,11 +25,11 @@ export class ScheduledappointmentsComponent {
 
   getAppointments()
   {
-    const apiUrl=`https://localhost:7287/api/Hospital/Appointments?HospitalId=${this.hospitalId}`;
+    const apiUrl=`http://43.205.181.183:5000/api/Hospital/Appointments?HospitalId=${this.hospitalId}`;
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log(response);
-        this.scheduledAppointments = response.filter(appointment => appointment.appointmentStatus === "Approved" && new Date(appointment.appointmentDate) >= new Date() );
+        this.scheduledAppointments = response.filter(appointment => appointment.appointmentStatus === "Approved" && appointment.appointmentDate >= new Date() );
         console.log(this.scheduledAppointments);
       },
       (error) =>

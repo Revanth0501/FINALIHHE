@@ -1,15 +1,23 @@
 <div class="appointment-cards">
-  <!-- Loop through the appointments -->
-  <div class="appointment-card" *ngFor="let appointment of appointmentDetails">
-    <div class="card-header">
-      <h4>Appointment Date: {{ appointment.appointmentDate  }}</h4>
+  <ng-container *ngIf="appointmentDetails && appointmentDetails.length > 0; else noHistory">
+    <div class="appointment-card" *ngFor="let appointment of appointmentDetails">
+      <div class="card-header">
+        <h4>Appointment Date: {{ appointment?.appointmentDate || 'N/A' }}</h4>
+      </div>
+      <div class="card-body">
+        <p><strong>Hospital Name:</strong> {{ appointment?.hospitalName || 'N/A' }}</p>
+        <p><strong>Doctor:</strong> {{ appointment?.doctor || 'N/A' }}</p>
+        <p><strong>Lab Tests:</strong> {{ appointment?.labtest || 'N/A' }}</p>
+        <p><strong>Diagnosis:</strong> {{ appointment?.diagonsis || 'N/A' }}</p>
+        <p><strong>Medication:</strong> {{ appointment?.medication || 'N/A' }}</p>
+      </div>
     </div>
-    <div class="card-body">
-      <p><strong>Hospital Name:</strong> {{ appointment.hospitalName }}</p>
-      <p><strong>Doctor</strong> {{ appointment.doctor }}</p>
-      <p><strong>Lab Tests:</strong> {{ appointment.labtest }}</p>
-      <p><strong>Diagnosis:</strong> {{ appointment.diagonsis }}</p>
-      <p><strong>Medication:</strong> {{ appointment.medication }}</p>
+  </ng-container>
+
+  <!-- Fallback content if no appointments are found -->
+  <ng-template #noHistory>
+    <div class="no-history">
+      <p style="color:black ; font-size: 18px;">No  Medical History Available for this Patient.</p>
     </div>
-  </div>
+  </ng-template>
 </div>

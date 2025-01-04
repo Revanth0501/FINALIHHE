@@ -19,7 +19,7 @@ export class ActivehospitalsComponent {
   }
 
   getHospitalsList(): void {
-    const apiUrl = "https://localhost:7287/api/Admin/HospitalList";
+    const apiUrl = "http://43.205.181.183:5000/api/Admin/HospitalList";
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log("Doctors List: ", response);
@@ -39,67 +39,67 @@ export class ActivehospitalsComponent {
     this.router.navigate(['/admin/hospitalprofile']);
   }
 
-  updateDetails(id:string): void {
-    this.sharedservice.setHospitalId(id);
-    this.router.navigate(['/hospital/updateprofileadmin']);
-  }
+  // updateDetails(id:string): void {
+  //   this.sharedservice.setHospitalId(id);
+  //   this.router.navigate(['/hospital/updateprofileadmin']);
+  // }
 
-  viewPassword(id:string): void {
-       const apiUrl = `https://localhost:7287/api/Admin/GetPassword?usertype=Hospital&Id=${id}`;
+  // viewPassword(id:string): void {
+  //      const apiUrl = `https://localhost:7287/api/Admin/GetPassword?usertype=Hospital&Id=${id}`;
         
-          this.http.get(apiUrl, { responseType: 'text' }).subscribe(
-            (response: string) => {
-              if (response) {
-                Swal.fire({
-                  title: 'Password Retrieved',
-                  text: `Password: ${response}`,
-                  icon: 'info',
-                });
-              } else {
-                Swal.fire({
-                  title: 'No Password Found',
-                  text: 'No password is associated with the provided ID.',
-                  icon: 'warning',
-                });
-              }
-            },
-            (error) => {
-              Swal.fire({
-                title: 'Error',
-                text: 'Failed to retrieve password. Please try again.',
-                icon: 'error',
-              });
-            }
-          );
-    }
+  //         this.http.get(apiUrl, { responseType: 'text' }).subscribe(
+  //           (response: string) => {
+  //             if (response) {
+  //               Swal.fire({
+  //                 title: 'Password Retrieved',
+  //                 text: `Password: ${response}`,
+  //                 icon: 'info',
+  //               });
+  //             } else {
+  //               Swal.fire({
+  //                 title: 'No Password Found',
+  //                 text: 'No password is associated with the provided ID.',
+  //                 icon: 'warning',
+  //               });
+  //             }
+  //           },
+  //           (error) => {
+  //             Swal.fire({
+  //               title: 'Error',
+  //               text: 'Failed to retrieve password. Please try again.',
+  //               icon: 'error',
+  //             });
+  //           }
+  //         );
+  //   }
   
   deleteHospital(id: number): void {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'Do you really want to delete your account?',
+      text: 'Do you really want to deactivate your account?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Yes, deactivate it!',
       cancelButtonText: 'No, cancel!',
     }).then((result) => {
       if (result.isConfirmed) {
-        const apiUrl = `https://localhost:7287/api/Hospital/DeleteHospital?hospitalId=${id}`;
+        const apiUrl = `http://43.205.181.183:5000/api/Hospital/DeleteHospital?hospitalId=${id}`;
         this.http.delete<any>(apiUrl).subscribe({
           next: (response) => {
             Swal.fire({
-              title: 'Deleted!',
-              text: response.message,
+              title: 'Deactivated!',
+              text: "Account Deactivated Successfully",
               icon: 'success',
               confirmButtonText: 'OK',
-            }).then( () => {window.location.reload()});
+            }).then( () => {this.getHospitalsList()});
           },
           error: (err) => {
-            console.error('Error deleting the account', err);
+            console.error('Error deactivating the account', err);
             Swal.fire({
               title: 'Error!',
-              text: 'Failed to delete the account. Please try again later.',
+              text: 'Failed to deactivating the account. Please try again later.',
               icon: 'error',
               confirmButtonText: 'OK',
             });
@@ -108,7 +108,7 @@ export class ActivehospitalsComponent {
       } else {
         Swal.fire({
           title: 'Cancelled',
-          text: 'Account deletion was cancelled.',
+          text: 'Account deactivation was cancelled.',
           icon: 'info',
           confirmButtonText: 'OK',
         });

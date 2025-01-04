@@ -53,7 +53,7 @@ export class UpdateprofileComponent implements OnInit {
       if (result.isConfirmed) {
         if (this.doctorForm.valid) {
           const doctorData = this.doctorForm.value;
-          const url = `https://localhost:7287/api/Doctor/UpdationDoctorData?Doctor_Id=${this.doctor_id}`;
+          const url = `http://43.205.181.183:5000/api/Doctor/UpdationDoctorData?Doctor_Id=${this.doctor_id}`;
 
           
           this.http.put(url, doctorData).subscribe(
@@ -92,7 +92,7 @@ export class UpdateprofileComponent implements OnInit {
 
   
   getHosiptals(): void {
-    const apiUrl = 'https://localhost:7287/api/Patient/HospitalsList';
+    const apiUrl = 'http://43.205.181.183:5000/api/Patient/HospitalsList';
     this.http.get(apiUrl).subscribe(
       (data: any) => {
         console.log('Fetched hospital data:', data);
@@ -107,7 +107,7 @@ export class UpdateprofileComponent implements OnInit {
 
   
   doctorProfile(): void {
-    const api = `https://localhost:7287/api/Doctor/DoctorProfile?Doctor_Id=${this.doctor_id}`;
+    const api = `http://43.205.181.183:5000/api/Doctor/DoctorProfile?Doctor_Id=${this.doctor_id}`;
     this.http.get<any[]>(api).subscribe(
       (data) => {
         console.log('Fetched data:', data);

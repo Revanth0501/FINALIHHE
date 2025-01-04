@@ -23,13 +23,13 @@ export class PastappointmentsComponent {
 
   
   appointmentsFetch(): void {
-    const apiUrl = `https://localhost:7287/api/Patient/AppointmentsFetch?PatientId=${this.patientId}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/AppointmentsFetch?PatientId=${this.patientId}`;
     this.http.get<any[]>(apiUrl).subscribe({
       next: (response) => {
         this.past_appointments=response.filter(
           (appointment:{status:string;appointmentDate:string}) =>
             appointment.status ?.trim().toLowerCase() === "approved" && 
-          new Date(appointment.appointmentDate) <=new Date()
+          new Date(appointment.appointmentDate) < new Date()
         )
         this.past_appointments.sort((a:any, b:any) => new Date(b.appointmentDate).getTime() - new Date(a.appointmentDate).getTime());
         console.log("Pending Appointments : ",this.past_appointments);

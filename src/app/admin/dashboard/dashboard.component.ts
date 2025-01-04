@@ -24,7 +24,7 @@ export class DashboardComponent {
 
     countDoctors():void
     {
-      const apiUrl="https://localhost:7287/api/Admin/DoctorsList";
+      const apiUrl="http://43.205.181.183:5000/api/Admin/DoctorsList";
       this.http.get<any[]>(apiUrl).subscribe(
         (response) => {
           this.doctorCount=response.length;
@@ -35,7 +35,7 @@ export class DashboardComponent {
 
     countPatients():void
     {
-      const apiUrl="https://localhost:7287/api/Admin/PatientsList";
+      const apiUrl="http://43.205.181.183:5000/api/Admin/PatientsList";
       this.http.get<any[]>(apiUrl).subscribe(
         (response) => {
           this.patientCount=response.length;
@@ -46,7 +46,7 @@ export class DashboardComponent {
 
     countHospitals():void
     {
-      const apiUrl = "https://localhost:7287/api/Admin/HospitalList";
+      const apiUrl = "http://43.205.181.183:5000/api/Admin/HospitalList";
       this.http.get<any[]>(apiUrl).subscribe(
         (response) => {
           this.hospitalCount=response.length;
@@ -57,7 +57,7 @@ export class DashboardComponent {
 
     countAppointments():void
     {
-      const apiUrl="https://localhost:7287/api/Admin/AppointmentsFetch";
+      const apiUrl="http://43.205.181.183:5000/api/Admin/AppointmentsFetch";
       this.http.get<any[]>(apiUrl).subscribe(
         (response) => {
           this.appointmentCount=response.length;

@@ -79,7 +79,7 @@ export class PatientRegistrationComponent {
       EmergencyContact:  this.registrationForm.value.emergencyContact,
     };
     
-    this.http.post('https://localhost:7287/api/Home/PatientRegistration', addRegistrationRequest).subscribe({
+    this.http.post('http://43.205.181.183:5000/api/Home/PatientRegistration', addRegistrationRequest).subscribe({
       next: (response:any) => {
         console.log('Registration successful:', response);
         Swal.fire({
@@ -105,5 +105,10 @@ export class PatientRegistrationComponent {
     });
   }
 
+    
+  redirectToSignIn()
+  {
+    this.router.navigate(['/home/login'])
+  }
   
 }

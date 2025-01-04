@@ -28,7 +28,7 @@ export class UpdateprofileComponent {
       hospitalEmail: ['', [Validators.required, Validators.email]],
       hospitalPhoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       hospitalAddress: ['', Validators.required],
-      avilableFacilities: ['', Validators.required],
+      availableFacilities: ['', Validators.required],
       hospitalType: ['', Validators.required],
       hospitalOwnershipType: ['', Validators.required]
     });
@@ -46,7 +46,7 @@ export class UpdateprofileComponent {
         if (this.Update_Hospital_Profile.valid) {
           const hospitalData = this.Update_Hospital_Profile.value;
           console.log("Sending data : ",hospitalData);
-          const api = `https://localhost:7287/api/Hospital/UpdateProfile`;
+          const api = `http://43.205.181.183:5000/api/Hospital/UpdateProfile`;
   
           this.http.put(api, hospitalData).subscribe(
             (data: any) => {
@@ -91,12 +91,12 @@ export class UpdateprofileComponent {
   }
 
   getHospital_profile(): void {
-    const apiUrl = `https://localhost:7287/api/Hospital/HospitalProfile?HospitalId=${this.hospital_id}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Hospital/HospitalProfile?HospitalId=${this.hospital_id}`;
 
     this.http.get<any>(apiUrl).subscribe(
       (data: any) => {
         this.filter_data = data[0];
-        console.log(this.filter_data);
+        console.log("Reciebed update profile data : ",this.filter_data);
 
         this.Update_Hospital_Profile.patchValue({
           hospitalId:this.filter_data.hospitalId,
@@ -104,7 +104,7 @@ export class UpdateprofileComponent {
           hospitalEmail: this.filter_data.hospitalEmail,
           hospitalPhoneNumber: this.filter_data.hospitalPhoneNumber,
           hospitalAddress: this.filter_data.hospitalAddress,
-          avilableFacilities: this.filter_data.availableFacilities,
+          availableFacilities: this.filter_data.availableFacilities,          
           hospitalType: this.filter_data.hospitalType,
           hospitalOwnershipType: this.filter_data.hospitalOwnershipType
         });

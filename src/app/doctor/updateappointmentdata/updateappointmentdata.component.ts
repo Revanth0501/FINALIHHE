@@ -55,13 +55,13 @@ export class UpdateappointmentdataComponent {
           };
           
          
-         
-          this.http.post('https://localhost:7287/api/Hospital/AppointmentData', formData).subscribe(
+         console.log("appointment id : ",this.appointmentId);
+          this.http.post('http://43.205.181.183:5000/api/Hospital/AppointmentData', formData).subscribe(
             (response) => {
               console.log('Response:', response);
               Swal.fire('Data Submitted Successfully');
               this.appointmentForm.reset();
-              this.router.navigate(['hospital/scheduledappointments']);
+              this.router.navigate(['/doctor/appointment'])
             },
             (error) => {
               

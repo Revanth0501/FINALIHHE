@@ -42,7 +42,7 @@ export class DoctorRegistrationComponent {
     }
 
     get_doctor_data(): void {
-      const apiUrl = 'https://localhost:7287/api/Patient/HospitalsList';
+      const apiUrl = 'http://43.205.181.183:5000/api/Patient/HospitalsList';
       this.http.get<any>(apiUrl).subscribe(
         (data: any) => {
           this.doctors = data;
@@ -58,7 +58,7 @@ export class DoctorRegistrationComponent {
      
         const doctorData = this.doctorForm.value;
         console.log(doctorData);
-        this.http.post('https://localhost:7287/api/Home/DoctorRegistration', doctorData).subscribe(
+        this.http.post('http://43.205.181.183:5000/api/Home/DoctorRegistration', doctorData).subscribe(
           (data: any) => {
             Swal.fire({
               position: "center",
@@ -85,6 +85,11 @@ export class DoctorRegistrationComponent {
           }
         );
       } 
+
+      redirectToSignIn()
+      {
+        this.router.navigate(['/home/login'])
+      }
 }
   
   

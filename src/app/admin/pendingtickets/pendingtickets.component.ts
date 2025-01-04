@@ -38,7 +38,7 @@ export class PendingticketsComponent implements OnInit, AfterViewInit, OnDestroy
   }
 
   GetIsuuesData(): void {
-    this.http.get<any[]>('https://localhost:7287/api/Admin/Tickets').subscribe({
+    this.http.get<any[]>('http://43.205.181.183:5000/api/Admin/Tickets').subscribe({
       next: (data) => {
         this.ticketIsuues = data.filter((ticket) => ticket.status === 'Pending');
         this.cd.detectChanges();
@@ -86,7 +86,7 @@ export class PendingticketsComponent implements OnInit, AfterViewInit, OnDestroy
       return;
     }
 
-    const apiUrl = `https://localhost:7287/api/Admin/TicketIsuueSolved?id=${ticketId}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Admin/TicketIsuueSolved?id=${ticketId}`;
     this.http.put(apiUrl, {}).subscribe({
       next: () => {
         Swal.fire('Success', 'Ticket status updated successfully.', 'success');

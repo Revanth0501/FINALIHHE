@@ -35,7 +35,7 @@ export class ChangepasswordComponent {
     }
   
     updatePasswordForm = new FormGroup({
-      oldPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      oldPassword: new FormControl('', [Validators.required]),
       newPassword: new FormControl('', [
         Validators.required,
         Validators.minLength(8),
@@ -75,7 +75,7 @@ export class ChangepasswordComponent {
         return;
       }
       console.log("Change Password : ",this.doctorId);
-      const apiUrl = `https://localhost:7287/api/Doctor/ChangePassword?Doctor_Id=${this.doctorId}&Doctor_Old_Password=${oldPassword}&Doctor_Updated_Password=${newPassword}`;
+      const apiUrl = `http://43.205.181.183:5000/api/Doctor/ChangePassword?Doctor_Id=${this.doctorId}&Doctor_Old_Password=${oldPassword}&Doctor_Updated_Password=${newPassword}`;
       this.http.put<any>(apiUrl, {}).subscribe({
         next: () => {
           Swal.fire({

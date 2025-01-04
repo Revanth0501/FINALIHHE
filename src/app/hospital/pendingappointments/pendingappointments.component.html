@@ -25,9 +25,10 @@
             <td>{{ appointment.appointmentTime }}</td>
             <td>{{ appointment.appointmentNote }}</td>
             <td>
+               <div>
                 <button class="btn btn-success" (click)="Approve(appointment.appointmentId)">Approve</button>
-                <button class="btn btn-danger" (click)="Reject(appointment.appointmentId)"
-                    style="margin-left: 10%;">Reject</button>
+                <button class="btn btn-danger" (click)="Reject(appointment.appointmentId)" style="margin-left: 10%;">Reject</button>
+               </div>
             </td>
         </tr>
     </tbody>

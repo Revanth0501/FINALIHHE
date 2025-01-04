@@ -26,7 +26,7 @@ export class AppointmentsComponent {
   }
 
   getAppointmentsData(): void {
-    const apiUrl = `https://localhost:7287/api/Doctor/doctorappointments?doctorId=${this.doctorId}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Doctor/doctorappointments?doctorId=${this.doctorId}`;
     this.http.get(apiUrl).subscribe((data: any) => {
       console.log(data);
       const today = new Date().toISOString().split('T')[0];

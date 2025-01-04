@@ -19,7 +19,7 @@ export class ActivedoctorsComponent {
   }
 
   getDoctorsList(): void {
-    const apiUrl = "https://localhost:7287/api/Admin/DoctorsList";
+    const apiUrl = "http://43.205.181.183:5000/api/Admin/DoctorsList";
     this.http.get<any[]>(apiUrl).subscribe(
       (response) => {
         console.log("Doctors List: ", response);
@@ -38,68 +38,68 @@ export class ActivedoctorsComponent {
    this.router.navigate(['/admin/doctorprofile']);
   }
 
-  updateDetails(id: string): void {
-    this.sharedservice.setDoctorId(id);
-   this.router.navigate(['/doctor/updateprofileadmin']);
-  }
+  // updateDetails(id: string): void {
+  //   this.sharedservice.setDoctorId(id);
+  //  this.router.navigate(['/doctor/updateprofileadmin']);
+  // }
 
-  viewPassword(id:string): void {
-     const apiUrl = `https://localhost:7287/api/Admin/GetPassword?usertype=Doctor&Id=${id}`;
+  // viewPassword(id:string): void {
+  //    const apiUrl = `https://localhost:7287/api/Admin/GetPassword?usertype=Doctor&Id=${id}`;
       
-        this.http.get(apiUrl, { responseType: 'text' }).subscribe(
-          (response: string) => {
-            if (response) {
-              Swal.fire({
-                title: 'Password Retrieved',
-                text: `Password: ${response}`,
-                icon: 'info',
-              });
-            } else {
-              Swal.fire({
-                title: 'No Password Found',
-                text: 'No password is associated with the provided ID.',
-                icon: 'warning',
-              });
-            }
-          },
-          (error) => {
-            Swal.fire({
-              title: 'Error',
-              text: 'Failed to retrieve password. Please try again.',
-              icon: 'error',
-            });
-          }
-        );
-  }
+  //       this.http.get(apiUrl, { responseType: 'text' }).subscribe(
+  //         (response: string) => {
+  //           if (response) {
+  //             Swal.fire({
+  //               title: 'Password Retrieved',
+  //               text: `Password: ${response}`,
+  //               icon: 'info',
+  //             });
+  //           } else {
+  //             Swal.fire({
+  //               title: 'No Password Found',
+  //               text: 'No password is associated with the provided ID.',
+  //               icon: 'warning',
+  //             });
+  //           }
+  //         },
+  //         (error) => {
+  //           Swal.fire({
+  //             title: 'Error',
+  //             text: 'Failed to retrieve password. Please try again.',
+  //             icon: 'error',
+  //           });
+  //         }
+  //       );
+  // }
 
   deleteDoctor(id: string): void {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'Do you really want to delete your account?',
+      text: 'Do you really want to deactivate your account?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Yes, deactivate it!',
       cancelButtonText: 'No, cancel!',
     }).then((result) => {
       if (result.isConfirmed) {
-        const apiUrl = `https://localhost:7287/api/Doctor/DeleteAccount?Id=${id}`;
+        const apiUrl = `http://43.205.181.183:5000/api/Doctor/DeleteAccount?Id=${id}`;
         this.http.delete<any>(apiUrl).subscribe({
           next: (response) => {
             Swal.fire({
-              title: 'Deleted!',
-              text: response.message,
+              title: 'Deactivated!',
+              text: "Account Deactivated Successfully",
               icon: 'success',
               confirmButtonText: 'OK',
-            }).then( () => {window.location.reload();});
+            }).then( () => {this.getDoctorsList()});
             
           },
           error: (err) => {
-            console.error('Error deleting the account', err);
+            console.error('Error deactivating the account', err);
             Swal.fire({
               title: 'Error!',
-              text: 'Failed to delete the account. Please try again later.',
+              text: 'Failed to deactivate the account. Please try again later.',
               icon: 'error',
               confirmButtonText: 'OK',
             });
@@ -108,7 +108,7 @@ export class ActivedoctorsComponent {
       } else {
         Swal.fire({
           title: 'Cancelled',
-          text: 'Account deletion was cancelled.',
+          text: 'Account deactivation was cancelled.',
           icon: 'info',
           confirmButtonText: 'OK',
         });

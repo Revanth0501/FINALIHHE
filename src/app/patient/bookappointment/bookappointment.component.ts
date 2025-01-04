@@ -41,7 +41,7 @@ export class BookappointmentComponent implements OnInit {
    
     this.patientId = this.sharedservice.getPatientId();
     this.appointmentform.get('patientid')?.setValue(this.patientId);
-    this.http.get<any[]>('https://localhost:7287/api/Patient/HospitalsList').subscribe({
+    this.http.get<any[]>('http://43.205.181.183:5000/api/Patient/HospitalsList').subscribe({
       next: (data) => {
         console.log('Hospitals data: ', data);
         this.hospitals = data;
@@ -55,7 +55,7 @@ export class BookappointmentComponent implements OnInit {
   onHospitalChange(hospital: string) {
     if (!hospital) return;
 
-    this.http.get<any[]>(`https://localhost:7287/api/Patient/DoctorsList?HospitalName=${hospital}`).subscribe({
+    this.http.get<any[]>(`http://43.205.181.183:5000/api/Patient/DoctorsList?HospitalName=${hospital}`).subscribe({
       next: (data) => {
         console.log('Doctors data: ', data);
         this.doctors = data.map(doctor => ({
@@ -101,7 +101,7 @@ export class BookappointmentComponent implements OnInit {
     console.log('Submitting Appointment Request:', addAppointmentRequest);
 
     // Send the appointment request to the API
-    this.http.post("https://localhost:7287/api/Patient/BookAppoinment", addAppointmentRequest).subscribe({
+    this.http.post("http://43.205.181.183:5000/api/Patient/BookAppoinment", addAppointmentRequest).subscribe({
       next: (response) => {
         console.log('API Response:', response);
         Swal.fire({

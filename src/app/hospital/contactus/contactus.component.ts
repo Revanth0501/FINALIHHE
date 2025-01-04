@@ -29,7 +29,7 @@ Contactform: FormGroup;
   }
 
   ngOnInit(): void {
-    this.GetPatientData();
+    this.GetHospitalData();
   }
 
   onSubmit(): void {
@@ -37,7 +37,7 @@ Contactform: FormGroup;
     if (this.Contactform.valid) {
       const Contactformdata = this.Contactform.value; 
 
-      this.http.post('https://localhost:7287/api/Admin/RaiseTicket', Contactformdata).subscribe(
+      this.http.post('http://43.205.181.183:5000/api/Admin/RaiseTicket', Contactformdata).subscribe(
         (data: any) => {
           Swal.fire({
             position: 'center',
@@ -72,8 +72,8 @@ Contactform: FormGroup;
     }
   }
 
-  GetPatientData(): void {
-    const api = `https://localhost:7287/api/Hospital/HospitalProfile?HospitalId=${this.hospitalId}`;
+  GetHospitalData(): void {
+    const api = `http://43.205.181.183:5000/api/Hospital/HospitalProfile?HospitalId=${this.hospitalId}`;
   
     this.http.get(api).subscribe({
       next: (data: any) => {
@@ -92,7 +92,7 @@ Contactform: FormGroup;
         Swal.fire({
           icon: 'error',
           title: 'Error fetching data',
-          text: 'Unable to fetch patient data. Please try again later.',
+          text: 'Unable to fetch  data. Please try again later.',
         });
       },
     });

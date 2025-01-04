@@ -24,7 +24,7 @@ hospital_data: any = null;
 
   // Fetch hospital profile data from the backend API
   getHospital_profile(): void {
-    const apiUrl = `https://localhost:7287/api/Hospital/HospitalProfile?HospitalId=${this.hospital_id}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Hospital/HospitalProfile?HospitalId=${this.hospital_id}`;
     this.http.get<any>(apiUrl).subscribe(
       (data: any) => {
         this.hospital_data = data;

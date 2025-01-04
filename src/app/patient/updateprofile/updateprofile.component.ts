@@ -27,7 +27,7 @@ export class UpdateprofileComponent {
   // Fetching personal information from the API
   getPersonalInformation(): void {
     console.log(" Update Profile : ",this.patientId);
-    const apiUrl = `https://localhost:7287/api/Patient/PersonalInformation?PatientId=${this.patientId}`;
+    const apiUrl = `http://43.205.181.183:5000/api/Patient/PersonalInformation?PatientId=${this.patientId}`;
     this.http.get<any>(apiUrl).subscribe({
       next: (response) => {
         // Assuming response[0] contains the personal data object
@@ -44,7 +44,7 @@ export class UpdateprofileComponent {
   }
 
   onSubmit() {
-    const apiUrl = "https://localhost:7287/api/Patient/UpdateProfile";
+    const apiUrl = "http://43.205.181.183:5000/api/Patient/UpdateProfile";
     
     this.http.put<any>(apiUrl, this.personal_data).subscribe({
       next: (response) => {
@@ -52,12 +52,12 @@ export class UpdateprofileComponent {
         Swal.fire({
           title: "Do you want to update the changes?",
           showCancelButton: true,
-          confirmButtonText: "Save"
+          confirmButtonText: "Update"
         }).then((result) => {
           if (result.isConfirmed) {
-            Swal.fire("Saved!", "", "success").then(() => {
+            Swal.fire("Updated!", "", "success").then(() => {
               this.router.navigate(['/profile']);
-            });
+            }).then( () => {this.router.navigate(['/patient/profile'])});
           }
         });
       },

@@ -23,7 +23,7 @@ export class DoctorsComponent {
   getDoctors(): void {
     console.log("Sending API request");
     console.log("Hospital Id:",this.hospitalId);
-    this.http.get<any>(`https://localhost:7287/api/Hospital/DoctorsList?HospitalId=${this.hospitalId}`).subscribe(
+    this.http.get<any>(`http://43.205.181.183:5000/api/Hospital/DoctorsList?HospitalId=${this.hospitalId}`).subscribe(
       (data:any) => { 
         console.log("Data Recieved for doctors")
         console.log(data); 

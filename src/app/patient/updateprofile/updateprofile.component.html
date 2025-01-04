@@ -66,14 +66,14 @@
         <label for="blood_type">Blood Type</label>
         <select id="blood_type" name="blood_type" [(ngModel)]="personal_data.bloodType" #blood_type="ngModel" required>
           <option value="" disabled>Select Blood Type</option>
-          <option value="A+ve">A+</option>
-          <option value="A-ve">A-</option>
-          <option value="B+ve">B+</option>
-          <option value="B-ve">B-</option>
-          <option value="AB+ve">AB+</option>
-          <option value="AB-ve">AB-</option>
-          <option value="O+ve">O+</option>
-          <option value="O-ve">O-</option>
+          <option value="A+">A+ve</option>
+          <option value="A-">A-ve</option>
+          <option value="B+">B+ve</option>
+          <option value="B-">B-ve</option>
+          <option value="AB+">AB+ve</option>
+          <option value="AB-">AB-ve</option>
+          <option value="O+">O+ve</option>
+          <option value="O-">O-ve</option>
         </select>
         <small *ngIf="blood_type.invalid && blood_type.touched" class="error">Blood type is required</small>
       </div>
