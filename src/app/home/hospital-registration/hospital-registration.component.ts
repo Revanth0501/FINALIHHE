@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class HospitalRegistrationComponent implements OnInit {
   hospital_Registration: FormGroup;
+  today: string ='';
 
   constructor(private fb: FormBuilder, private http: HttpClient,private router:Router) {
     this.hospital_Registration = this.fb.group({
@@ -30,8 +31,14 @@ export class HospitalRegistrationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Any initialization logic can go here
+    this.today = new Date().toISOString().split('T')[0];
+    this.hospital_Registration = this.fb.group({
+      hospitalEstablishedDate: ['', Validators.required]
+    });
   }
+  
+
+  
 
   on_Submit() {
     if (this.hospital_Registration.valid) {

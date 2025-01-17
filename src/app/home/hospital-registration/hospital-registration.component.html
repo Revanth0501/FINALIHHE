@@ -76,7 +76,7 @@
 
           <div class="input-box">
             <label class="details" for="hospitalEstablishedDate" style="font-weight:600;">Established Date</label>
-            <input type="date" id="hospitalEstablishedDate" name="hospitalEstablishedDate" formControlName="hospitalEstablishedDate">
+            <input type="date" id="hospitalEstablishedDate" name="hospitalEstablishedDate" formControlName="hospitalEstablishedDate" [max]="today" >
             <small class="error" *ngIf="hospital_Registration.get('hospitalEstablishedDate')?.touched && hospital_Registration.get('hospitalEstablishedDate')?.invalid">
               *Established date is required.
             </small>
